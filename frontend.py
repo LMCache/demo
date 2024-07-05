@@ -4,18 +4,14 @@ import pandas as pd
 import streamlit as st
 import chat_session
 
-_LOREM_IPSUM = """
-This document mainly talks about FFmpeg, a fast video and audio converter that can also grab live sources. It explains how to use FFmpeg to convert files or streams, and covers topics such as input and output options, stream selection, filtering, and various formats and codecs. The document also mentions the use of filters and provides examples of different command line options.
-"""
-
 file_dict = {
     "Stardew Valley Background 1": "data/intro.txt",
     "Abigail": "data/abi.txt",
     "Alex": "data/alex.txt",
-    ("Abigail", "Player 1"): "data/abi-chat-1.txt",
-    ("Abigail", "Player 2"): "data/abi-chat-2.txt",
-    ("Alex", "Player 1"): "data/alex-chat-1.txt",
-    ("Alex", "Player 2"): "data/alex-chat-2.txt",
+    ("Abigail", "Player 1 (negative)"): "data/abi-chat-1.txt",
+    ("Abigail", "Player 2 (positive)"): "data/abi-chat-2.txt",
+    ("Alex", "Player 1 (negative)"): "data/alex-chat-1.txt",
+    ("Alex", "Player 2 (positive)"): "data/alex-chat-2.txt",
 }
 
 
@@ -33,7 +29,7 @@ with st.sidebar:
 
     chat_history = st.selectbox(
         "Recent interactions between NPC and player",
-        ["Player 1", "Player 2"])
+        ["Player 1 (negative)", "Player 2 (positive)"])
 
     optimization = st.checkbox("Enable LMCache optimization")
     port = 8000 if optimization else 8001
