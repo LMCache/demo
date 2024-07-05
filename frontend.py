@@ -1,55 +1,53 @@
 import time
+import os, sys
 import numpy as np
 import pandas as pd
 import streamlit as st
 import chat_session
+from typing import List, Dict
 
-_LOREM_IPSUM = """
-This document mainly talks about FFmpeg, a fast video and audio converter that can also grab live sources. It explains how to use FFmpeg to convert files or streams, and covers topics such as input and output options, stream selection, filtering, and various formats and codecs. The document also mentions the use of filters and provides examples of different command line options.
-"""
+@st.cache_data
+def read_chunks(file_folder) -> Dict[str, str]:
+    """
+    Read all the txt files in the folder and return the filenames
+    """
+    filenames = os.listdir(file_folder)
+    ret = {}
+    for filename in filenames:
+        if not filename.endswith("txt"):
+            continue
+        key = filename.removesuffix(".txt")
+        with open(os.path.join(file_folder, filename), "r") as fin:
+            value = fin.read()
+        ret[key] = value
 
-file_dict = {
-    "Stardew Valley Background 1": "data/intro.txt",
-    "Abigail": "data/abi.txt",
-    "Alex": "data/alex.txt",
-    ("Abigail", "Player 1"): "data/abi-chat-1.txt",
-    ("Abigail", "Player 2"): "data/abi-chat-2.txt",
-    ("Alex", "Player 1"): "data/alex-chat-1.txt",
-    ("Alex", "Player 2"): "data/alex-chat-2.txt",
-}
+    return ret
 
+chunks = read_chunks("data/")
+selected_chunks = st.multiselect(
+    "Select the chunks into the context",
+    list(chunks.keys()),
+    default = [],
+    placeholder = "Select in the drop-down menu")
 
 container = st.container(border=True)
 container.header("The context given to LLM:", divider = "grey")
 
 with st.sidebar:
-    background = st.selectbox(
-        "Game background description",
-        ["Stardew Valley Background 1"])
-
-    npc = st.selectbox(
-        "NPC background",
-        ["Abigail", "Alex"])
-
-    chat_history = st.selectbox(
-        "Recent interactions between NPC and player",
-        ["Player 1", "Player 2"])
-
     optimization = st.checkbox("Enable LMCache optimization")
     port = 8000 if optimization else 8001
-
-    print("The port is:", port)
-
     session = chat_session.ChatSession(port)
-    session.set_context([
-        file_dict[background],
-        file_dict[npc],
-        file_dict[(npc, chat_history)],
-    ])
-    context = session.get_context()
-    container.text(context)
 
-    messages = st.container(height=300)
-    if prompt := st.chat_input("Say something"):
+    system_prompt = st.text_area(
+            "System prompt:",
+            "You are a helpful assistant. I will now give you a few paragraphs and "
+            "please answer my question afterwards based on the content in the paragraphs"
+        )
+
+    session.set_context([system_prompt] + [chunks[key] for key in selected_chunks])
+    container.text(session.get_context())
+
+    messages = st.container(height=400)
+    if prompt := st.chat_input("Type the question here"):
         messages.chat_message("user").write(prompt)
         messages.chat_message("assistant").write_stream(session.chat(prompt))

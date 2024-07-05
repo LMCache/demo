@@ -1,4 +1,4 @@
-Here are the recent interaction between you and the player:
+Here are the recent interaction between NPC Abigail and a player:
 
 Player: [Gives a loved gift, Amethyst]
 Abigail: "You remembered! Amethyst is my favorite. You're the best, [Player]!"

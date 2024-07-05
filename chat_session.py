@@ -7,7 +7,7 @@ import time
 
 
 class ChatSession:
-    def __init__(self, port):
+    def __init__(self, port, context_separator = "###"):
         openai_api_key = "EMPTY"
         openai_api_base = f"http://localhost:{port}/v1"
 
@@ -20,40 +20,20 @@ class ChatSession:
         models = client.models.list()
         self.model = models.data[0].id
 
-        self.messages = [
-            {
-                "role": "user",
-                "content": f"I want you to act as a NPC in stardew Valley and talk with me. I will now provide some basic knowledge about the Stardew Valley and the basic information of the NPC you are going to act as. "
-                "The general guideline are following: " 
-                "1. do NOT talk too much! Just 2-3 sentences will be good enough. "
-                "2. make sure you are acting! Just generate the texts said by the NPC, don't generate anything else! "
-                "Please reponse 'Got it' if you understand and are ready to act as the NPC",
-            }, 
-            {
-                "role": "assistant",
-                "content": "Got it"
-            }, 
-        ]
+        self.messages = []
 
         self.final_context = ""
+        self.context_separator = context_separator
 
 
-    def set_context(self, context_files):
+    def set_context(self, context_strings):
         contexts = []
-        for file in context_files:
-            with open(file, "r") as fin:
-                context = fin.read()
+        for context in context_strings:
             contexts.append(context)
 
-            # Evil hacking: write the first context twice to increase the number of tokens in total
-            if len(contexts) == 1:
-                contexts.append(context)
-                contexts.append(context)
-
-        contexts.append("Please start acting now!")
-        self.final_context =  "\n".join(contexts) 
+        self.final_context =  self.context_separator.join(contexts) 
         self.on_user_message(self.final_context, display=False)
-        self.on_server_message("Got it! Now I'm the NPC.", display=False)
+        self.on_server_message("Got it!", display=False)
 
     def get_context(self):
         return self.final_context
@@ -78,6 +58,7 @@ class ChatSession:
             model=self.model,
             temperature=0.5,
             stream=True,
+            stop = "\n",
         )
 
         output_buffer = StringIO()
@@ -92,11 +73,3 @@ class ChatSession:
 
         self.on_server_message("".join(server_message))
         yield f"\n\n(Response delay: {end - start:.2f} seconds)"
-
-if __name__ == "__main__":
-    session = ChatSession(8000)
-    session.set_context(["data/intro.txt", "data/abi.txt"])
-    
-    ret = session.chat("Hey, here's a present for you, it's moss.")
-    for text in ret:
-        print(text)

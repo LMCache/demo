@@ -1,4 +1,4 @@
-Here are the recent interaction between you and the player:
+Here are the recent interaction between NPC Abigail and a player:
 
 Player: [Gives a hated gift]
 Abigail: "Oh... Why would you think I like this?"

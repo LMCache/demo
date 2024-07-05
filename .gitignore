@@ -1,0 +1,6 @@
+*.sh
+
+__pycache__/
+
+# Vim temp files
+.*.sw*
