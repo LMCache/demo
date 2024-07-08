@@ -1,5 +1,3 @@
-chunk_size: 256
+cache_path: "cache.pt" 
 local_device: "cpu"
-
-# Whether retrieve() is pipelined or not
-pipelined_backend: False
+sep_token_ids: "[422,422]"

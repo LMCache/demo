@@ -15,7 +15,19 @@ The demo needs to talk with 2 vLLM serving engine at localhost:8000 and localhos
 
 It assumes vLLM at port 8000 has the LMCache optimizations and the other one is non-optimized.
 
-Start vLLM w/ LMCache
+In the example.yaml, several config parameters need to be set:
+```
+cache_path: path where precomputed KV cahce are stored (default: "cache.pt")
+local_device: "cpu" or "gpu" (default: "cpu")
+separator_id: chunk separator which does not occur in the text chunks (default: "[422,422]")
+```
+
+Precompute KV cache and store them on disk
+```
+python precompute.py --lmcache-config-file example.yaml
+```
+
+Start vLLM w/ LMCache (precomputed KV cache are automattically loaded to local device)
 ```
 python3 -m vllm.entrypoints.openai.api_server --model mistralai/Mistral-7B-Instruct-v0.2 --port 8000 --gpu-memory-utilization 0.6 --lmcache-config-file example.yaml
 ```
