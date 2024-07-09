@@ -7,3 +7,6 @@ __pycache__/
 
 # kv cache
 cache.pt
+
+# local test
+sep.py

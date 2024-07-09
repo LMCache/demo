@@ -4,7 +4,9 @@ import json
 import pdb
 import argparse
 import yaml
+import os
 
+#python precompute.py --lmcache-config-file example.yaml --data-path data
 
 parser = argparse.ArgumentParser()
 parser.add_argument(
@@ -12,18 +14,19 @@ parser.add_argument(
         type=str,
         help="The path to the lmcache configuration yaml file. Empty means disabling the lmcache")
 
+parser.add_argument(
+        "--data-path",
+        type=str,
+        help="The path where text chunks are stored.")
+
 args = parser.parse_args()
 config_path = args.lmcache_config_file
 with open(config_path, 'r') as fin:
     config = yaml.safe_load(fin)
 cache_path = config.get("cache_path","cache.pt")
-
-file_lists = [
-"data/introduction.txt",
-"data/abi.txt","data/abi-chat-1.txt","data/abi-chat-2.txt",
-"data/alex.txt","data/alex-chat-1.txt","data/alex-chat-2.txt",
-"data/gameplay.txt","data/npc-relationships.txt","data/npcs.txt",
-]
+data_path = args.data_path
+data_list = os.listdir(data_path)
+file_list = [data_path+"/"+file for file in data_list if file.endswith(".txt")]
 
 llm = LLM(model="mistralai/Mistral-7B-Instruct-v0.2", gpu_memory_utilization=0.5,
           )
@@ -33,7 +36,7 @@ tokenizer = llm.llm_engine.tokenizer.tokenizer
 cache_driver = llm.llm_engine.model_executor.driver_worker.model_runner.lmcache_driver
 
 doc_prompts = []
-for file in file_lists:
+for file in file_list:
     f = open(f"{file}")
     doc_prompts.append(f.read())
 
@@ -65,8 +68,6 @@ doc_chunk_ids = [s_start_full] + doc_chunk_ids
 cache_fuse_metadata['collect'] = True
 cache_fuse_metadata["check"] = False
 
-num_layer = 32
-
 input_ids = []
 doc_chunk_ids_store = []
 for i in range(len(doc_chunk_ids)):
@@ -89,7 +90,7 @@ for i in range(len(doc_chunk_ids)):
     v_tensor = None
     
     llm_layers = llm.llm_engine.model_executor.driver_worker.model_runner.model.model.layers
-    for j in range(num_layer):
+    for j in range(len(llm_layers)):
         past_key_values = llm_layers[j].self_attn.hack_kv
         if i == 0:
             temp_k = past_key_values[0][:s_start_len].clone() # do not chage with s_start_1

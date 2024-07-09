@@ -24,7 +24,7 @@ separator_id: chunk separator which does not occur in the text chunks (default: 
 
 Precompute KV cache and store them on disk
 ```
-python precompute.py --lmcache-config-file example.yaml
+python precompute.py --lmcache-config-file example.yaml --data-path data
 ```
 
 Start vLLM w/ LMCache (precomputed KV cache are automattically loaded to local device)
@@ -39,5 +39,5 @@ CUDA_VISIBLE_DEVICES=1 python3 -m vllm.entrypoints.openai.api_server --model mis
 
 Run the frontend
 ```
-streamlit run frontend.py
+streamlit run frontend_blend.py
 ```

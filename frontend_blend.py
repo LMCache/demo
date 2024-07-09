@@ -16,6 +16,8 @@ def read_chunks(file_folder) -> Dict[str, str]:
     for filename in filenames:
         if not filename.endswith("txt"):
             continue
+        if filename == "sys_prompt.txt":
+            continue
         key = filename.removesuffix(".txt")
         with open(os.path.join(file_folder, filename), "r") as fin:
             value = fin.read()
@@ -31,17 +33,34 @@ selected_chunks = st.multiselect(
     placeholder = "Select in the drop-down menu")
 
 # TODO(Jiayi): add system prompt support?
+f = open("data/sys_prompt.txt")
+sys_prompt = f.read()
 
 container = st.container(border=True)
 container.header("The context given to LLM:", divider = "grey")
 
+
 with st.sidebar:
+    sys_container = st.container(border=True)
+    sys_container.header("System prompt")
+    sys_container.text(
+        sys_prompt
+    )
+    temperature = st.slider("Temperature: ", 0.0, 1.0, 0.0)
     optimization = st.checkbox("Enable LMCacheBlend optimization")
     port = 8000 if optimization else 8001
+    
     print("The port is:", port)
+    print("Current temparature is:", temperature)
 
     session = chat_session_blend.ChatSession(port)
-    session.set_context([chunks[key] for key in selected_chunks])
+
+    
+    
+    session.temperature = temperature
+    session.separator = " # # " if optimization else ""
+    
+    session.set_context([sys_prompt] + [chunks[key] for key in selected_chunks])
     container.text(session.get_context())
 
     messages = st.container(height=400)

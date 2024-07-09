@@ -27,6 +27,7 @@ class ChatSession:
 
         self.final_context = ""
         self.separator = " # # "
+        self.temperature = 0.0
 
     def set_context(self, context_list):
         input_prompt = ""
@@ -56,7 +57,7 @@ class ChatSession:
         chat_completion = self.client.chat.completions.create(
             messages=self.messages,
             model=self.model,
-            temperature=0,
+            temperature=self.temperature,
             stream=True,
             #stop=['\n']
         )
