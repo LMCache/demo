@@ -6,7 +6,7 @@ __pycache__/
 .*.sw*
 
 # kv cache
-cache.pt
+*.pt
 
 # local test
 sep.py
