@@ -5,6 +5,17 @@ import pandas as pd
 import streamlit as st
 import chat_session_blend
 from typing import List, Dict
+from transformers import AutoTokenizer
+
+@st.cache_resource
+def get_tokenizer():
+    model_name = "mistralai/Mistral-7B-Instruct-v0.2"
+    tokenizer = AutoTokenizer.from_pretrained(model_name)
+    return tokenizer
+
+
+tokenizer = get_tokenizer()
+
 
 @st.cache_data
 def read_chunks(file_folder) -> Dict[str, str]:
@@ -37,7 +48,7 @@ f = open("data/sys_prompt.txt")
 sys_prompt = f.read()
 
 container = st.container(border=True)
-container.header("The context given to LLM:", divider = "grey")
+#container.header("The context given to LLM:", divider = "grey")
 
 
 with st.sidebar:

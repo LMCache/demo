@@ -1,4 +1,5 @@
 from vllm import LLM, SamplingParams
+from tqdm import tqdm
 import torch
 import json
 import pdb
@@ -81,7 +82,7 @@ for i in range(len(doc_chunk_ids)):
     doc_chunk_ids_store.append(temp_ids)
     
 # Concatenate old KVs
-for i in range(len(doc_chunk_ids)):
+for i in tqdm(range(len(doc_chunk_ids))):
     if i==0:
         prompts = ["<s>[INST] "]
     else:
