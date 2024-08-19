@@ -20,6 +20,11 @@ parser.add_argument(
         type=str,
         help="The path where text chunks are stored.")
 
+parser.add_argument(
+        "--model",
+        type=str,
+        help="The LLM model name")
+
 args = parser.parse_args()
 config_path = args.lmcache_config_file
 with open(config_path, 'r') as fin:
@@ -33,10 +38,11 @@ if os.path.exists(cache_path):
 
 data_path = args.data_path
 data_list = os.listdir(data_path)
+model_name = args.model
 file_list = [data_path+"/"+file for file in data_list if file.endswith(".txt")]
 
-llm = LLM(model="mistralai/Mistral-7B-Instruct-v0.2", gpu_memory_utilization=0.5,
-          tensor_parallel_size=2
+llm = LLM(model=model_name, gpu_memory_utilization=0.5,
+          #tensor_parallel_size=2
           )
 tokenizer = llm.llm_engine.tokenizer.tokenizer
 
