@@ -54,7 +54,7 @@ container = st.container(border=True)
 with st.sidebar:
     sys_container = st.container(border=True)
     sys_container.header("System prompt")
-    sys_container.text(
+    sys_container.markdown(
         sys_prompt
     )
     temperature = st.slider("Temperature: ", 0.0, 1.0, 0.0)
@@ -72,6 +72,8 @@ with st.sidebar:
     session.separator = " # # " if optimization else ""
     
     session.set_context([sys_prompt] + [chunks[key] for key in selected_chunks])
+    num_tokens = tokenizer.encode(session.get_context())
+    container.header(f"The context given to LLM: ({len(num_tokens)} tokens)", divider = "grey")
     container.text(session.get_context())
 
     messages = st.container(height=400)

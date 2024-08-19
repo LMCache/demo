@@ -25,6 +25,12 @@ config_path = args.lmcache_config_file
 with open(config_path, 'r') as fin:
     config = yaml.safe_load(fin)
 cache_path = config.get("cache_path","cache.pt")
+if os.path.exists(cache_path):
+    print("Found existing cache at", cache_path)
+    print("Now skipping the pre-compute.")
+    print("Please remove the existing cache file if you want to redo the pre-compute")
+    exit(1)
+
 data_path = args.data_path
 data_list = os.listdir(data_path)
 file_list = [data_path+"/"+file for file in data_list if file.endswith(".txt")]

@@ -1,3 +1,3 @@
-cache_path: "/data/yihua/cache.pt" 
-local_device: "cuda"
+cache_path: "/data/cache.pt" 
+local_device: "cpu"
 sep_token_ids: "[422,422]"
