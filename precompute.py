@@ -125,7 +125,7 @@ for i in tqdm(range(len(doc_chunk_ids))):
     kv_tensor = torch.cat([k_tensor, v_tensor], dim=0)
     cache_driver.collect_kv_and_store(torch.tensor(doc_chunk_ids_store[i]),
                                       kv_tensor.cpu())
-#cache_driver.dump(cache_path)
+cache_driver.dump(cache_path)
 
 
    
