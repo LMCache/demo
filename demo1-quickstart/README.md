@@ -51,4 +51,8 @@ Then, start the web server using:
 streamlit run frontend.py
 ```
 
-You should be able to access the frontend from your browser at `http://<your server's IP>:8501`
+You should be able to access the frontend from your browser at `http://<your server's IP>:8501`.
+
+### What to expect:
+
+LMCache should be able to reduce the response delay since the second question.
