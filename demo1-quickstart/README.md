@@ -1,6 +1,7 @@
 # LMCache demo 1: quickstart
 
-![image](https://github.com/LMCache/demo/assets/25103655/64fcf08d-d094-46e5-a280-2439fd0cb445)
+![image](https://github.com/user-attachments/assets/f0577071-c3ba-4094-a7d2-5b288fbd411b)
+
 
 This demo will help you set up the vLLM + LMCache and a QA frontend.
 
