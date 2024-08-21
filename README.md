@@ -1,4 +1,4 @@
-# Demo for LMCache
+# Demos for LMCache
 
 ![image](https://github.com/LMCache/demo/assets/25103655/64fcf08d-d094-46e5-a280-2439fd0cb445)
 
