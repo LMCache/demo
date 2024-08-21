@@ -56,7 +56,12 @@ streamlit run frontend.py
 
 You should be able to access the frontend from your browser at `http://<your server's IP>:8501`.
 
-In the demo, you can select different texts to make a long context, and ask questions to different vLLM instaces.
+In the demo, you can select different texts to make a long context, and ask questions to different vLLM instances.
+
+## Stop the docker images
+```bash
+sudo bash stop-dockers.sh
+```
 
 ### What to expect:
 
