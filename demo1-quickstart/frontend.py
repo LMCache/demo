@@ -8,7 +8,7 @@ from typing import List, Dict
 from transformers import AutoTokenizer
 
 # Change the following variables as needed
-MODEL_NAME = "mistralai/Mistral-7B-Instruct-v0.2" 
+MODEL_NAME = "lmsys/longchat-7b-16k"
 PORT = 8000
 
 @st.cache_resource

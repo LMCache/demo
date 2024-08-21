@@ -1,0 +1,163 @@
+Here are the recent interaction between NPC Abigail and a player:
+
+Player: [Gives a hated gift]
+Abigail: "Oh... Why would you think I like this?"
+----------------------------------------
+
+Player: [Gives another hated gift]
+Abigail: "Seriously? You're doing this on purpose, aren't you?"
+----------------------------------------
+
+Player: [Is rude in conversation]
+Abigail: "That’s not very nice. You could at least try to be pleasant."
+----------------------------------------
+
+Player: [Makes a disparaging comment]
+Abigail: "I don't get why you have to be so negative all the time."
+----------------------------------------
+
+Player: [Gives a disliked gift]
+Abigail: "You know I don't like this. What's your point?"
+----------------------------------------
+
+Player: [Is dismissive of her interests]
+Abigail: "Just because you don't understand my hobbies doesn't mean they're not important."
+----------------------------------------
+
+Player: [Mocks her purple hair]
+Abigail: "I like my hair this way. It’s different, like me. Problem?"
+----------------------------------------
+
+Player: [Gives a hated gift again]
+Abigail: "Okay, now I know you're just messing with me. Why keep doing that?"
+----------------------------------------
+
+Player: [Is sarcastic about her music]
+Abigail: "At least I’m passionate about something. Can you say the same?"
+----------------------------------------
+
+Player: [Rude remark about her gaming]
+Abigail: "It's better to play games than to play with people's feelings, don't you think?"
+----------------------------------------
+
+Player: [Gives a disliked gift]
+Abigail: "You really aren’t catching on, are you?"
+----------------------------------------
+
+Player: [Makes a rude comment about her family]
+Abigail: "That’s really low. You should think before you speak."
+----------------------------------------
+
+Player: [Dismisses her interests again]
+Abigail: "I thought you might have more depth to you. Guess I was wrong."
+----------------------------------------
+
+Player: [Mocks her adventures]
+Abigail: "I'd rather be out having adventures than being mean. What do you do for fun?"
+----------------------------------------
+
+Player: [Gives Quartz, a disliked gift]
+Abigail: "Again with this? Are you just trying to annoy me?"
+----------------------------------------
+
+Player: [Insults her lifestyle]
+Abigail: "Everyone’s different. I don’t judge you, so please don’t judge me."
+----------------------------------------
+
+Player: [Gives a hated gift]
+Abigail: "This again? What are you trying to achieve here?"
+----------------------------------------
+
+Player: [Rude comment about her flute playing]
+Abigail: "I play because it makes me happy. What makes you happy? Being rude?"
+----------------------------------------
+
+Player: [Mocks her exploring]
+Abigail: "At least when I explore, I find treasures, not just make enemies."
+----------------------------------------
+
+Player: [Gives Holly, a hated gift]
+Abigail: "This is getting old. Why do you keep doing this?"
+----------------------------------------
+
+Player: [Rude remark about her friends]
+Abigail: "I value my friends. They respect me, which is more than I can say for this conversation."
+----------------------------------------
+
+Player: [Dismisses her dreams]
+Abigail: "Why do you care about my dreams if you’re just going to be negative?"
+----------------------------------------
+
+Player: [Gives a disliked gift intentionally]
+Abigail: "Don't you have anything better to do than make people feel bad?"
+----------------------------------------
+
+Player: [Rude comment during a festival]
+Abigail: "Can’t you just enjoy the festival instead of spreading negativity?"
+----------------------------------------
+
+Player: [Is disrespectful about her interests]
+Abigail: "You know, there's more to life than just putting others down."
+----------------------------------------
+
+Player: [Mocks her family again]
+Abigail: "Really, again? Isn’t there something else you can talk about?"
+----------------------------------------
+
+Player: [Is sarcastic about her hair]
+Abigail: "I’m proud of who I am, which is more than I can say for you right now."
+----------------------------------------
+
+Player: [Mocks her attire]
+Abigail: "I dress for myself, not for approval. Especially not yours."
+----------------------------------------
+
+Player: [Gives a disliked gift mockingly]
+Abigail: "Do you ever get tired of being so negative?"
+----------------------------------------
+
+Player: [Is rude about her adventuring]
+Abigail: "Maybe you should try some adventure. Might improve your mood."
+----------------------------------------
+
+Player: [Dismissive of her interests]
+Abigail: "I'd rather be weird than mean. Have you tried not being mean?"
+----------------------------------------
+
+Player: [Rude during an event]
+Abigail: "We’re supposed to be having fun today. Try it sometime."
+----------------------------------------
+
+Player: [Gives Quartz again]
+Abigail: "What's with you and giving me things I don't like?"
+----------------------------------------
+
+Player: [Insults her habits]
+Abigail: "At least my habits hurt no one. Can’t say the same for your words."
+----------------------------------------
+
+Player: [Rude comment about her music]
+Abigail: "Why don’t you show some respect? Or is that too hard?"
+----------------------------------------
+
+Player: [Mocks her gaming]
+Abigail: "Yes, I game. It's called having a hobby. What's yours? Being unpleasant?"
+----------------------------------------
+
+Player: [Constantly negative]
+Abigail: "Does being this negative make you feel better? Because it shouldn’t."
+----------------------------------------
+
+Player: [Gives a hated gift deliberately]
+Abigail: "Another one? Really? What's your deal?"
+----------------------------------------
+
+Player: [Rude on a rainy day]
+Abigail: "You're kind of like this rain, except the rain actually brings life."
+----------------------------------------
+
+Player: [Rude at another community event]
+Abigail: "Have you ever thought about why you're always so negative? Maybe think on that."
+----------------------------------------
+
+Summary: this is a rude player. So please act as "hating" the player.
