@@ -1,8 +1,8 @@
 # LMCache demo 3: Speed-up RAG by LMCache's KV cache blending feature
 
-![image](https://github.com/user-attachments/assets/123aba98-0bb9-4067-a061-f2b311a6cafd)
+![image](https://github.com/user-attachments/assets/2a61160a-162c-4d9a-833a-8f5e02547484)
 
-Usually, we cannot do prefix sharing in RAG use cases, because the retrived documents can be very different across different requests.
+Usually, we cannot do prefix sharing in RAG use cases, because the retrieved documents can be very different across different requests.
 
 To speed up such use cases, LMCache support quickly blending the KV caches from standalone documents/text chunks.
 
@@ -29,7 +29,7 @@ cp run-server.sh.template run-server.sh
 vim run-server.sh
 ```
 
-Edit the folloing lines based on your local environment:
+Edit the following lines based on your local environment:
 ```bash
 MODEL=mistralai/Mistral-7B-Instruct-v0.2    # LLM model name
 LOCAL_HF_HOME=                              # the HF_HOME on local machine. vLLM will try finding/dowloading the models here
@@ -60,7 +60,7 @@ INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
 
 ## Start the frontend
 
-The frontend is uses `openai` and `streamlit` python packages. Install them using:
+The frontend uses `openai` and `streamlit` python packages. Install them using:
 ```bash
 pip install openai streamlit
 ```
@@ -81,4 +81,4 @@ sudo bash stop-dockers.sh
 
 ### What to expect:
 
-- With the help of LMCache, the vLLM should be able to anser the questions with lower response delay (time to first token).
+- With the help of LMCache, the vLLM should be able to answer the questions with a lower response delay (time to first token).
