@@ -1,21 +1,24 @@
-# LMCache demo 2: share KV across different vLLM instances
+# LMCache demo 3: Speed-up RAG by LMCache's KV cache blending feature
 
 ![image](https://github.com/user-attachments/assets/123aba98-0bb9-4067-a061-f2b311a6cafd)
 
-This demo shows how to share KV across different vLLM instances using LMCache
+Usually, we cannot do prefix sharing in RAG use cases, because the retrived documents can be very different across different requests.
 
+To speed up such use cases, LMCache support quickly blending the KV caches from standalone documents/text chunks.
+
+This demo demonstrates the capability of using LMCache in RAG use cases.
 
 ## Prerequisites
 To run the quickstart demo, your server should have 2 GPUs and the [docker environment](https://docs.docker.com/engine/install/) with the [nvidia-runtime](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) installed.
 
 Depending on the server configuration, you may need sudo access to run the docker.
 
-This demo will use the port 8000, 8001 (for vLLM), 65432 (for LMCache backend server), and 8501 (for the frontend).
+This demo will use the port 8000, 8001 (for vLLM), and 8501 (for the frontend).
 
 ## Clone the repo to local
 ```bash
 git clone https://github.com/LMCache/demo
-cd demo/demo2-multi-node-sharing
+cd demo/demo3-KV-blending
 ```
 
 ## Start the LMCache + vLLM with docker 
@@ -38,13 +41,13 @@ Then, start the docker images.
 bash ./run-server.sh  # This might need sudo
 ```
 
-Now, you should have 3 docker images running.
-- `lmcache-server` is the LMCache backend server that shares KV across multiple vLLM instaces
-- `lmcache-vllm1` and `lmcache-vllm2` are the LMCache-integrated vLLM instaces 
+The script will first load all the text chunks in `data/` folder and calculate the KV cache for each chunk separately.
+
+Then, it will start two docker images, `lmcache-vllm1` (vLLM with LMCache) and `lmcache-vllm2` (vLLM w/o LMCache).
 
 You can monitor the logs by:
 ```bash
-sudo docker logs --follow lmcache-vllm1  # Or other two docker images' name
+sudo docker logs --follow lmcache-vllm1 
 ```
 
 The vLLM serving engine is ready after you see the following lines in the log:
@@ -69,7 +72,7 @@ streamlit run frontend.py
 
 You should be able to access the frontend from your browser at `http://<your server's IP>:8501`.
 
-In the demo, you can select different texts to make a long context, and ask questions to different vLLM instances.
+In the demo, you can select different text chunks and re-order them to make a long context, and ask questions to different vLLM instances (with or without LMCache).
 
 ## Stop the docker images
 ```bash
@@ -78,5 +81,4 @@ sudo bash stop-dockers.sh
 
 ### What to expect:
 
-- If the new context shares the same prefix as previously-used context, LMCache should be able to reduce the response delay by reusing the prefix KV cache.
-- After vLLM instace 1 processes the context, vLLM instance 2 should be able to response much faster when loading the same context. This is because it can load KV cache from the LMCache server backend.
+- With the help of LMCache, the vLLM should be able to anser the questions with lower response delay (time to first token).

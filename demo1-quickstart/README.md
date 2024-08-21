@@ -39,6 +39,14 @@ Then, start the docker
 bash ./run-server.sh  # This might need sudo
 ```
 
+The vLLM serving engine is ready after you see the following lines in the log:
+```text
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+```
+
 ## Start the frontend
 
 The frontend is uses `openai` and `streamlit` python packages. Install them using:
