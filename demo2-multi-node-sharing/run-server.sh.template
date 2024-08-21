@@ -10,7 +10,7 @@ PORT2=8001
 sudo docker pull apostacyh/vllm:lmcache-0.1.0
 sudo docker pull apostacyh/lmcache-server:0.1.0
 
-docker run --name lmcache-server --network host -d apostacyh/lmcache-server:0.1.0 0.0.0.0 65432
+sudo docker run --name lmcache-server --network host -d apostacyh/lmcache-server:0.1.0 0.0.0.0 65432
 
 sudo docker run --name lmcache-vllm1 --runtime nvidia --gpus '"device=0"' \
     -v ${LOCAL_HF_HOME}:/root/.cache/huggingface \
@@ -27,5 +27,5 @@ sudo docker run --name lmcache-vllm2 --runtime nvidia --gpus '"device=1"' \
     --ipc=host \
     --network=host \
     -d apostacyh/vllm:lmcache-0.1.0 \
-    --model ${MODEL} --gpu-memory-utilization 0.6 --port ${PORT} \
+    --model ${MODEL} --gpu-memory-utilization 0.6 --port ${PORT2} \
     --lmcache-config-file /lmcache/LMCache/examples/example.yaml
