@@ -3,7 +3,7 @@ import os, sys
 import numpy as np
 import pandas as pd
 import streamlit as st
-import chat_session_blend
+import chat_session
 from typing import List, Dict
 from transformers import AutoTokenizer
     
@@ -67,7 +67,7 @@ with st.sidebar:
     print("The port is:", port)
     print("Current temparature is:", temperature)
 
-    session = chat_session_blend.ChatSession(port)
+    session = chat_session.ChatSession(port)
 
 
 

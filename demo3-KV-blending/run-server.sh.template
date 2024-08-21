@@ -10,6 +10,7 @@ PORT2=8001
 sudo docker pull apostacyh/vllm:lmcache-blend
 
 # Preprocess the text chunks 
+set -e
 sudo docker run --runtime nvidia --gpus '"device=0"' \
     -v ${LOCAL_HF_HOME}:/root/.cache/huggingface \
     -v `pwd`/data:/input \
@@ -18,9 +19,9 @@ sudo docker run --runtime nvidia --gpus '"device=0"' \
     --ipc=host \
     --network=host \
     --entrypoint python3 \
-    apostacyh/vllm-lmcache:blend \
+    apostacyh/vllm:lmcache-blend \
     /lmcache/demo/precompute.py \
-    --model $model --lmcache-config-file /lmcache/demo/example.yaml --data-path /input \
+    --model ${MODEL} --lmcache-config-file /lmcache/demo/example.yaml --data-path /input \
 
 # Start vLLM with LMCache
 sudo docker run --name lmcache-vllm1 --runtime nvidia --gpus '"device=0"' \
@@ -34,7 +35,7 @@ sudo docker run --name lmcache-vllm1 --runtime nvidia --gpus '"device=0"' \
     --lmcache-config-file /lmcache/demo/example.yaml
 
 # Start vLLM without LMCache
-sudo docker run --name lmcache-vllm2 --runtime nvidia --gpus '"device=0"' \
+sudo docker run --name lmcache-vllm2 --runtime nvidia --gpus '"device=1"' \
     -v ${LOCAL_HF_HOME}:/root/.cache/huggingface \
     -v `pwd`/data:/input \
     -v `pwd`/data:/data \
