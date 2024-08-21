@@ -1,7 +1,6 @@
-# LMCache demo 1: quickstart
+# LMCache demo 2: share KV across different vLLM instances
 
-![image](https://github.com/user-attachments/assets/f0577071-c3ba-4094-a7d2-5b288fbd411b)
-
+![image](https://github.com/user-attachments/assets/123aba98-0bb9-4067-a061-f2b311a6cafd)
 
 This demo shows how to share KV across different vLLM instances using LMCache
 
@@ -57,7 +56,12 @@ streamlit run frontend.py
 
 You should be able to access the frontend from your browser at `http://<your server's IP>:8501`.
 
-In the demo, you can select different texts to make a long context, and ask questions to different vLLM instaces.
+In the demo, you can select different texts to make a long context, and ask questions to different vLLM instances.
+
+## Stop the docker images
+```bash
+sudo bash stop-dockers.sh
+```
 
 ### What to expect:
 
