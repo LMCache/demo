@@ -30,7 +30,7 @@ vim run-server.sh
 Edit the folloing lines based on your local environment:
 ```bash
 MODEL=mistralai/Mistral-7B-Instruct-v0.2    # LLM model name
-LOCAL_HF_HOME=                              # the HF_HOME on local machine. vLLM will try finding/dowloading the models here
+LOCAL_HF_HOME=                              # the HF_HOME on local machine. vLLM will try finding/downloading the models here
 HF_TOKEN=                                   # (optional) the huggingface token to access some special models
 ```
 
@@ -49,7 +49,7 @@ INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
 
 ## Start the frontend
 
-The frontend is uses `openai` and `streamlit` python packages. Install them using:
+The frontend uses `openai` and `streamlit` python packages. Install them using:
 ```bash
 pip install openai streamlit
 ```
