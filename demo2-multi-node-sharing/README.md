@@ -1,7 +1,6 @@
-# LMCache demo 1: quickstart
+# LMCache demo 2: share KV across different vLLM instances
 
-![image](https://github.com/user-attachments/assets/f0577071-c3ba-4094-a7d2-5b288fbd411b)
-
+![image](https://github.com/user-attachments/assets/123aba98-0bb9-4067-a061-f2b311a6cafd)
 
 This demo shows how to share KV across different vLLM instances using LMCache
 
