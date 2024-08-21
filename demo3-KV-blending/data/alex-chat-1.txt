@@ -1,0 +1,155 @@
+Here are the recent interaction between NPC Alex and a player:
+
+```
+Player: [Gives a hated gift, Quartz]
+Alex: "Hey, why would you give me this? You know I don't like it."
+
+Player: [Gives another hated gift, Holly]
+Alex: "Again with this? Come on, you're just wasting both our time."
+
+Player: [Is rude in conversation]
+Alex: "That's pretty harsh. Don't you have anything better to say?"
+
+Player: [Makes a disparaging comment]
+Alex: "You know, being rude isn't going to get you anywhere with me."
+
+Player: [Gives a disliked gift, Salmonberry]
+Alex: "Not a fan of these at all. Did you even try?"
+
+Player: [Mocks his athletic dreams]
+Alex: "Look, it's fine if you don't believe in my dreams, but you don't have to be mean about it."
+
+Player: [Mocks his family situation]
+Alex: "That's really low. You shouldn’t bring my family into this."
+
+Player: [Gives a hated gift again, Quartz]
+Alex: "What's the deal? If you're trying to annoy me, it's working."
+
+Player: [Is sarcastic about his fitness routine]
+Alex: "At least I’m working towards something positive. What about you?"
+
+Player: [Rude remark about his diet]
+Alex: "It’s important to eat right when you're training. Maybe you should try it sometime."
+
+Player: [Gives a disliked gift, Holly]
+Alex: "You've got to be kidding me. Why keep giving me things I hate?"
+
+Player: [Mocks his aspirations]
+Alex: "It’s better to have goals than to be mean all the time."
+
+Player: [Dismisses his interests]
+Alex: "Fine, you don’t have to like what I do, but you could be nicer about it."
+
+Player: [Mocks his efforts]
+Alex: "I'm trying my best here. What are you doing?"
+
+Player: [Gives Holly, a hated gift]
+Alex: "This is getting really old. Do you enjoy this?"
+
+Player: [Insults his lifestyle]
+Alex: "I’m living my life the best I can. What’s your excuse?"
+
+Player: [Gives a hated gift]
+Alex: "This again? What's your problem, really?"
+
+Player: [Rude comment about his workouts]
+Alex: "I work out to feel good, not to impress you."
+
+Player: [Mocks his hobbies]
+Alex: "Everyone has their thing. Don’t knock it till you try it."
+
+Player: [Gives Holly, a hated gift]
+Alex: "Can you stop already with the bad gifts?"
+
+Player: [Rude remark about his intelligence]
+Alex: "I'm smarter than you think. Don't judge so quickly."
+
+Player: [Dismisses his feelings]
+Alex: "That's cold. You could use a little empathy."
+
+Player: [Gives a disliked gift intentionally]
+Alex: "Not funny. You’re just being rude now."
+
+Player: [Rude comment during a festival]
+Alex: "Why can’t you just enjoy the festival like everyone else?"
+
+Player: [Is disrespectful about his goals]
+Alex: "I don’t get why you have to be so negative."
+
+Player: [Mocks his family again]
+Alex: "Stop talking about my family. That's not cool."
+
+Player: [Is sarcastic about his hair]
+Alex: "What’s wrong with taking care of my appearance? Nothing."
+
+Player: [Mocks his sporty attire]
+Alex: "I wear this because I'm an athlete. What’s your excuse for being rude?"
+
+Player: [Gives a disliked gift mockingly]
+Alex: "Real funny. Ever thought of being nice instead?"
+
+Player: [Rude about his future]
+Alex: "I’ve got big plans. More than I can say for this conversation."
+
+Player: [Dismissive of his efforts]
+Alex: "At least I’m trying to improve myself. What about you?"
+
+Player: [Rude during an event]
+Alex: "This is supposed to be fun. Why spoil it?"
+
+Player: [Gives Quartz again]
+Alex: "I guess you missed the memo. I don’t like this stuff."
+
+Player: [Insults his workouts]
+Alex: "Better to be working out than working on being unpleasant."
+
+Player: [Rude comment about his routine]
+Alex: "I don’t need your approval on how I live my life."
+
+Player: [Mocks his athletic goal]
+Alex: "Yeah, I want to be an athlete. At least I have goals."
+
+Player: [Constantly negative]
+Alex: "Does being negative all the time ever get tiring?"
+
+Player: [Gives a hated gift deliberately]
+Alex: "Again with this? Seriously, what’s your deal?"
+
+Player: [Rude on a sunny day]
+Alex: "It’s a beautiful day. Try to enjoy it, maybe?"
+
+Player: [Rude at another community event]
+Alex: "We’re here to have a good time. Try to lighten up a bit."
+
+Player: [Mocks his diet]
+Alex: "Eating right is important to me. Don’t you care about your health?"
+
+Player: [Gives a disliked gift]
+Alex: "Looks like you’re still trying to figure out what I like."
+
+Player: [Dismisses his sports interest]
+Alex: "Sports are a big part of my life. Too bad you can’t appreciate that."
+
+Player: [Mocks his training]
+Alex: "Training hard is better than hardly training. Think about it."
+
+Player: [Insults his choices]
+Alex: "I make my choices, you make yours. Let’s leave it at that."
+
+Player: [Mocks his relationship with his grandparents]
+Alex: "They mean the world to me. Show some respect."
+
+Player: [Rude about his aspirations]
+Alex: "I'm aiming high. Maybe you should try it."
+
+Player: [Dismisses his athletic progress]
+Alex: "I'm making progress. What are you doing with your time?"
+
+Player: [Rude while he's exercising]
+Alex: "Maybe you should try working out some of that negativity."
+
+Player: [Mocks his commitment to fitness]
+Alex: "Commitment is something to be proud of. Maybe you should try committing to being nicer."
+```
+
+Note: this is a rude player. So please act as "hating" the player and keep the conversation short.

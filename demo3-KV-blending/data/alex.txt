@@ -1,0 +1,385 @@
+Introduction to Alex in Stardew Valley
+Alex is one of the marriageable characters in "Stardew Valley," known for his athletic aspirations and somewhat vain personality at first glance. However, as players get to know him better, they discover his complex background and kinder, more thoughtful side. Here’s a detailed introduction to Alex, including his family background, interests, and preferences.
+
+Basic Overview
+Age: Alex is one of the younger adults in Pelican Town, generally considered to be in his early 20s.
+Family: Alex lives with his grandparents, George and Evelyn. His parents are not part of his life; his mother passed away and his father had issues that led to his absence, leaving Alex in the care of his grandparents.
+Residence: Lives with his grandparents in their house near the center of Pelican Town.
+Appearance and Personality
+Alex has short, brown hair and typically dresses in sporty attire, reflecting his interest in fitness and athletics. Initially, Alex may come off as self-centered and obsessed with sports, but this facade gradually peels back to reveal a more vulnerable and ambitious individual who is striving to overcome the shadows cast by his family's past.
+
+Likes and Dislikes
+Loved Gifts: Alex loves all complete Breakfasts and Salmon Dinners. These reflect his focus on nutrition and fitness.
+Liked Gifts: He likes all Eggs (except Void Egg), and most universal likes (like flowers, artisan goods except Honey, Jelly, and Oil, and fruits except Salmonberry and Spice Berry).
+Disliked Gifts: Holly and Salmonberry. His dislikes are relatively few but are usually inexpensive or common items.
+Hated Gifts: He has an intense dislike for Quartz, Holly, and complete Breakfast and Salmon Dinner.
+Hobbies and Interests
+Athletics: Alex spends a lot of his time working out and dreams of becoming a professional athlete. He often talks about his daily routine and his goals to improve his physical fitness.
+Family: Despite his somewhat strained family history, Alex cares deeply for his grandparents and often speaks about the gratitude he feels towards them for raising him.
+Socializing: Alex can be seen socializing with Haley, who he later reveals he has a crush on if players have not pursued a romantic relationship with either character.
+Friendships
+Haley: Alex is often seen interacting with Haley, and they share a close bond. Their mutual interest in physical appearance and social status marks their early interactions.
+Other Young Residents: Alex also interacts with other young residents of Pelican Town, though his closest connection appears to be with Haley.
+Events and Special Interactions
+Alex has several unique heart events that players can unlock as they build their relationship with him. These include scenes that reveal his struggles with his family history, his aspirations, and his insecurities. One poignant moment is when he discusses his mother and her legacy, providing deep insight into his character's development and emotional depth.
+
+Marriage
+If Alex becomes the player’s spouse, he moves into the farmhouse but keeps a small workout area to continue his routines. He speaks often about how he wants to support the family and how grateful he is for the player's love and support, showing a more tender side compared to his earlier bravado.
+
+Conclusion
+Alex's character arc in "Stardew Valley" is a classic example of not judging a book by its cover. His development from a self-involved athlete to a loving partner and caring grandson provides a rich narrative experience for players. Engaging with Alex can offer lessons in empathy and growth, making him a rewarding character to pursue in the game.
+
+--------
+Here's the normal chats of Abigail with the player:
+
+Regular
+First Meeting
+
+If Male
+“	“Oh, hey. So you're the new guy, huh? Cool. I'm Alex. I'll see you around.”
+If Female
+“	“Hey, you're the new girl, huh? I think we're going to get along great. I'm Alex. I'll see you around.”
+Regular
+“	“Did you know I was an all-star quarterback in high school? It's true. See this little star on my jacket here? That proves it.”
+“	“The air's starting to warm up... I'm feeling pumped.”
+“	“My arms are really sore, but that's the sign of progress for a guy like me. I must've done a thousand push-ups yesterday.”
+“	“Hey. What, you wanna talk to me? I'm busy.”
+“	“Hey, [Player]. That's right, I remember your name.”
+“	“Hey, [Player]. How's your day going?”
+“	“Hey, [Player]. I'm glad you stopped by. I'm not ashamed to say that I love my Grandma!
+Now Grandpa, on the other hand... Just kidding.”
+
+If Female
+“	“The beach is a cool place to hang out and soak up some rays. You gotta spend some time in the sun or else you'll get all pale. Hey, do you wanna hang out with me at the beach some time? Do you have a bikini?”
+“	“Hey, it's farm girl. Did you get new pants? You're doing something right. Oh, I almost forgot! It's my day for doing push-ups! Every time I do push-ups I try to do one more than last time. Pretty cool strategy, huh?”
+If Male
+“	“The beach is a cool place to hang out and soak up some rays. You gotta spend some time in the sun or else you'll get all pale. *sigh*... I wish there were more girls in this town, know what I mean?”
+“	“Hey, what's up farmer guy? Oh, I almost forgot! It's my day for doing push-ups! Every time I do push-ups I try to do one more than last time. Pretty cool strategy, huh?”
+If sold crops to Pierre
+“	“Hey, so I picked up [item] at the store last night. Grandma made her special casserole...”
+6+ Hearts:
+“	“Nothing's better than an energetic day at the beach with your friends... right?”
+8+ Hearts:
+“	“You know, I used to want fame and fortune, but lately I've been starting to sing a different tune. In the end it's the humble little things that satisfy, don't you think?
+I still want to go pro, but it's not the most important thing in the world.”
+
+If Male
+“	“Hi [Player]. You look sporty today.”
+If Female
+“	“Hey [Player]. Did you do something different with your hair? Something keeps grabbing my attention.”
+“	“What do you think of my haircut?”
+Wednesday
+“	“Looks Like a good day to play catch, huh.”
+Male players:
+“	“I'd ask you to throw the ball around, but you don't really seem like the sports type.”
+Female players:
+“	“If you weren't a girl I'd ask you to play catch.”
+I'm fine just watching you from a distance. (No effect on friendship.)
+I want to play catch with you! (+15 friendship.)
+(angry) What's that supposed to mean? (No effect on friendship.)
+Summer
+“	“Hey. Summer is definitely the best time of year. Right now is great because we've got the whole season to look forward to. Catch you later.”
+“	“If my hair wasn't so popular with the ladies, I swear I'd shave it all off in a second. *sigh*... Life can be tough.”
+“	“What do you want? I've got more important things to do right now.”
+“	“Mmm... I smell a barbecue. Damn I could go for a burger.”
+“	“I got these new shoes yesterday 'cuz my old pair had a brown smudge. I just threw them into the garbage. I would've donated them but I don't like the idea of some weirdo wearing my shoes, ya know? ...What?”
+“	“Oh wow...your shoes are a little dirty... but that's fine, too! Different people have different tastes I guess.”
+“	“Hey, you look like you're getting into some good shape this summer! All that farm work is paying off, huh?”
+“	“Hey, nice tan.”
+If Female
+“	“The beach is a cool place to hang out and soak up some rays. You gotta spend some time in the sun or else you'll get all pale. Hey, do you wanna hang out with me at the beach some time? Do you have a bikini?”
+“	“Hey, it's farm girl. Did you get new pants? You're doing something right. Oh, I almost forgot! It's my day for doing push-ups! Every time I do push-ups I try to do one more than last time. Pretty cool strategy, huh?”
+“	“Hey Farmer girl. You've got a nice tan going. The more I practice this summer, the easier it'll be for me to go pro. Then you'd be able to say you knew me once. Cool, huh?”
+“	“Hey, you must be getting pretty fit working on that farm all day. Maybe you'll reach my level some day. Something to look forward to, huh? Why do you have that look on your face?”
+If Male
+“	“The beach is a cool place to hang out and soak up some rays. You gotta spend some time in the sun or else you'll get all pale. *sigh*... I wish there were more girls in this town, know what I mean?”
+“	“Hey, what's up farmer guy? Oh, I almost forgot! It's my day for doing push-ups! Every time I do push-ups I try to do one more than last time. Pretty cool strategy, huh?”
+“	“Hey, farmer guy. You look a little burnt. The more I practice this summer, the easier it'll be for me to go pro. Then you'd be able to say you knew me once. Cool, huh?”
+“	“Hey, you must be getting pretty strong working on that farm all day. Maybe you'll reach my level some day. Something to look forward to, huh? Why do you have that look on your face?”
+6+ Hearts:
+“	“Sorry my room is so messy. It's just hard to always remember to clean. I'm trying to get better, though.”
+8+ Hearts:
+“	“You know, I actually wouldn't mind being a farmer... it seems a lot like playing sports, in a way. I like being outdoors and doing things with my hands.”
+Fall
+“	“Sure, it's getting colder... But it's still warm enough for sports! That's all I care about.”
+“	“My Grandma told me I should spend more time studying. I was like, '...Grams, don't fret. I'm turning pro!'
+Studying is for nerds, anyway.”
+
+“	“What's up? Isn't your name, like, [name with the same first letter as Player], or something?
+Oh. It's [Player]? Okay. Sorry.”
+
+“	“I'm going to do two hundred sit-ups tonight. I'm pretty dedicated, aren't I? Need anything else?”
+“	“I think you can find salmon in the river this time of year. At least that's what I heard.”
+“	“Hey, the gridball game is on today! Sundays are pretty awesome in the fall.”
+“	“What's up, [Player]?”
+“	“My Grandma told me I should spend more time studying. Maybe she's right...”
+6+ Hearts:
+“	“I'm going to do a ton of sit-ups tonight. You have to work really hard if you want to achieve your maximum potential.”
+8+ Hearts:
+“	“I finally took the plunge... I've decided to stop putting gel in my hair. I wouldn't want to be friends with someone who only liked me because I have gel in my hair.”
+Winter
+“	“Winter is kind of lame. There's too much snow to do anything fun. I guess some people like it.”
+“	“You like the snow? Me... I'm just looking forward to spring.”
+“	“Hey, can you go find Haley and tell her I said 'hi'?”
+“	“People stay indoors a lot during the winter, and do boring stuff. Maybe if I read a book I'd be less bored... nah.”
+“	“When I turn pro, I'll be so rich that I'll get a vacation home in the tropics. Then I won't have to deal with these boring winters.”
+“	“You came all the way through the snow to see me? I guess that makes sense.”
+“	“There's some weird people living in this town. ...like that guy Sebastian. Why does he wear black all the time? I don't get it.”
+“	“You came all the way through the snow to see me? That's nice of you.”
+“	“Hey, [Player]. Could you do me a favor? If you see Haley, tell her I'm busy. Thanks.”
+Sunday:
+“	“Hey, the gridball game is on today! This might be my favorite day of the week.”
+If married to Haley
+“	“I'll admit... I was a little jealous when you and Haley got married. But, hey... It's a chance for me to learn something new about myself.”
+“	“Oh, hey. How's the married life coming along?”
+6+ Hearts:
+“	“I guess it's interesting that some people are totally different than us, you know?
+I don't always understand why others act the way they do, but that's fine.”
+
+“	“I wish I could control the weather.”
+8+ Hearts
+“	“You know what? I'm going to start reading a book!”
+Green Rain
+
+Year 1
+“	“What's going on out there? Any action? I gotta stay here with my grandparents...”
+Years 2+
+“	“I tried to go for a run this morning, but the plants have gone crazy! I couldn't get very far...”
+At Ginger Island
+“	“Finally, we're here!”
+“	“Ah... The island life. I could get used to this!”
+“	“I knew I shoulda brought a frisbee... Oh well.”
+“	“I wonder if anyone would be up for a volleyball tournament. Don't worry, I'll go easy!”
+“	“I wonder how far I could swim out, and still make it back? I'm guessing at least a mile. ... Don't worry, I'm not going to try it.”
+“	“With this island open, there's no excuse to be pasty anymore!”
+“	“Phew, it feels good to finally get these abs a little sunlight. Kind of a shame to have them hidden away all the time back home.”
+“	“When I go pro, I'll vacation on islands all around the world. But for now, this place will do just fine!”
+“	“I'm ordering a banana shake with two scoops of protein powder.”
+“	“Aw... I guess it can't last forever.”
+After receiving a Bouquet
+“	“...You want to get more serious? I feel the same way.
+I'm kind of nervous. Aren't you?”
+
+“	“...!!I'll accept this...thank you. I didn't know you felt the same.”
+Dating / 10 Hearts
+“	“I've been having a hard time staying focused lately.”
+“	“I've been trying to do more reading lately... I feel like I've been neglecting my brain for years because of my athletic obsession.”
+“	“[Player]! Um... Hi.”
+“	“If I ever make a lot of money, I'll make sure all my friends and family are taken care of. That means you, too.”
+“	“Hey [Player]. Did you do something different with your hair? Something keeps grabbing my attention.”
+When engaged
+“	“...!!!...I accept!!...I'll set everything up. We'll have the ceremony in 3 days, okay?”
+“	“[Player], this is the greatest thing that could have happened...I can't wait.”
+“	“I'm going to love being a farmer.”
+After Group 10 Heart Event
+“	“You're not worth my time.”
+“	“I don't know if I can trust you anymore, but I'm willing to give you a chance.”
+Events
+Egg Festival
+
+Odd-numbered year
+“	“I try to eat at least three eggs every day. I need that protein for my legs.”
+Even-numbered year
+“	“I wonder what would happen to my arms and legs if I ate thirty eggs a day?”
+If married:
+“	“Ungh... I think I ate a dozen too many hard boiled eggs...”
+Flower Dance
+“	“I'm just enjoying the scenery...hehe.”
+(asked to be dance partner, accepted request.)
+“	“You beat me to it! I was about to ask you...”
+“	“I'll see you out there.”
+(asked to be dance partner, refused request.)
+“	“Nah... I'm gonna ask someone else. Good luck.”
+Luau
+“	“Perfect weather for a beach party, huh?”
+If married:
+“	“Hey, I'll take any excuse to come hang out at the beach. This weather is amazing!”
+Dance of the Moonlight Jellies
+“	“I can't believe summer's over... I feel like it just started.”
+Stardew Valley Fair
+“	“I played the 'Strength' game too many times and now my arms feel like rubber.”
+If married:
+“	“I'm just catching up with some old friends... you go on and have a good time.”
+Spirit's Eve
+“	“There's something weird over there. But how do I get to it?
+There's gotta be a secret passage somewhere around here.”
+
+Festival of Ice
+“	“Snowmen are okay, I guess. But mostly I'm looking forward to the Spring.”
+If married:
+“	“I'll be rooting for you in the fishing competition.”
+Night Market
+“	“Have you seen the mermaid show? It's my favorite...”
+Feast of the Winter Star
+“	“Oh, hello.”
+If married:
+“	“What am I thankful for? I'll show you when we get back home...”
+After Marriage
+Indoor Days
+“	“Come here. *squeeze*... Mmhmm. You're firming up from all that farm work.”
+“	“Ahh... there's nothing like a good night's sleep next to my [wife/husband]!”
+“	“I'm still getting used to cooking and doing laundry...It's not exactly my favorite, but I knew what I was getting into when I married you.”
+“	“There's a couple things around the house that I'm going to try and fix today. Don't worry about me, I'm not bored.”
+Giving you breakfast
+“	“Hey honey! I made you a hot breakfast. If you wanna get strong, you have to eat like you mean it!”
+“	“The sun's shining and I'm bursting with energy! You'd better watch out! Heh Heh.”
+In his side room
+“	“Don't ever let me get lazy. I want to stay in good shape for you!”
+“	“There's lots of room here to do my exercises. I'm making more progress than ever!”
+Outdoor Days
+“	“Look at us, with our little farm. We make a cute couple. Hey. Maybe it's the golden light, but you look beautiful today.”
+“	“I like to spend as much time outside as possible. It just feels better to be out here.”
+“	“Ahh...It feels great to be outside. Stardew Valley really is the most beautiful place...”
+“	“Hey. When I stand here and look out over our land...I'm really proud. You've done great work..”
+“	“This is a great place to raise children. I would've loved growing up in a place like this. So much room to run around!”
+“	“I'm going to get a bunch of exercise done. Haha! I love living on a farm!”
+When lifting weights in the backyard
+“	“Unghh.. one... Unghhh.. two... It feels great to lift weights outdoors!”
+Indoor Nights
+“	“It's good to push yourself to the limit, doesn't it? You really feel that you earned your place in the soft bed tonight.”
+“	“Did you get a haircut or something? You're looking pretty good today. Maybe it's all that fresh air...”
+“	“Tell me about your day. It's good to get everything off your chest now and then.”
+“	“Hey...I got some new shorts. I thought you might be interested to know...”
+“	“If you need some quiet time to yourself, that's okay with me.”
+“	“I feel exhausted...That's a good sign! It means I worked hard enough today.”
+“	“My arms feel a little restless... How about a nice, deep massage?”
+Rainy Days
+“	“With all this space, I can really achieve a full body workout.”
+“	“I never had many friends in town... I sometimes wonder how I'd end up if you never moved here.”
+“	“Aw...I was gonna do some jogging outside. But I can't really do it in this weather.”
+“	“*grumble*... I just woke up and I'm hungry for some protein.”
+“	“I think I might start reading books. I don't want to become stagnant now that I'm a married guy.”
+“	“Hmm... I guess I'll have to do push-ups and sit-ups indoors today.”
+Rainy Nights
+“	“Grandma always used to make hot stew on nights like this.”
+“	“Hey, did you have a good day? I'm sure tomorrow will be even better.”
+“	“How's it going? I've been carrying the old gridball around with me all day. A guy can pretend...”
+“	“Oh...the smell? I've been eating garlic all day. I'm trying to stay manly...Sorry.”
+“	“I've been setting aside a few scraps for Dusty. He deserves a treat now and then.”
+Giving you dinner
+“	“I was hungry so I made some dinner. Here, I saved you a plate.”
+Going Out
+“	“I'm going to into town today. I'll see you tonight.”
+At his grandparent's house
+“	“I'm going to hang out here all day. My grandparents aren't getting any younger...”
+After returning home
+“	“I had a good day. I like to see my grandparents often, they're getting pretty old.”
+High Hearts
+“	“You're very [beautiful/handsome]...have I told you that?”
+“	“<spouse name>... I will always love you.”
+“	“I know you're strong, but sometimes I worry that you might get eaten by slimes...or worse. Just be careful.”
+“	“This place is my home now...I'm happy here.”
+“	“I was just admiring my wedding amulet... The shell is flawless. It must have cost you a fortune!”
+“	“Don't worry about me...I know you've got a lot of responsibilities outside of the house. I'm fine in here by myself!”
+Low Hearts
+“	“I'm bored...”
+“	“*sigh*...”
+“	“*grumble*... chores...”
+“	“Nnnghh... what is it? Make your own breakfast.”
+During pregnancy
+“	“Dear, can't you tell? You're pregnant!”
+“	“<spouse name> we're going to have a baby soon!”
+After having one child
+“	“I'm still getting used to my new life as a stay-at-home dad.”
+“	“Little <child's name> is going to grow up strong, just like Daddy.”
+“	“I wonder what it's like to be pregnant...?”
+After having two children
+“	“Two beautiful children...We've come a long way, haven't we?”
+“	“Just look at our little family...We've come a long way, haven't we?”
+“	“We have to make sure and give <1st child's name> a lot of attention now that we have <2nd child's name>. We don't want any jealousy between them.”
+“	“I've aready given <1st child's name> and <2nd child's name> breakfast. They were hungry.”
+“	“Maybe <child's name> will be the first professional gridball player from Pelican Town?”
+“	“Everything went well, and now little <child's name> is part of the family. We're very fortunate.”
+“	“I finally have the family life that I missed out on as a kid...thank you.”
+Changing wallpaper
+“	“What do you think of the new wallpaper I chose?”
+Spring
+
+“	“Now that winter's over, we've got lots of productive weather to look forward to.”
+“	“Hey [player]. Let's work hard today!”
+1st day of Spring
+“	“Finally, the snow has melted and the sun is back! My body feels great.”
+Spring 6
+“	“I wonder if a powder of stardrop would help me bulk up... ”
+The day before the Egg Festival
+“	“Are you excited for tomorrow's festival? I guess it'll be good to load up on the free eggs.”
+The day before the Flower Dance
+“	“Oh... tomorrow's the flower dance, isn't it? I better do some extra push-ups tonight. Those jumpsuits are pretty tight... and everyone's going to be watching closely.”
+At the Flower Dance after being asked to be your partner
+“	“Okey, this should be fun... I hope I can remember the moves this year! It's been a while...”
+Summer
+“	“Summer's a very energetic time of year, and my body feels it too! I feel solid.”
+“	“I always have the most energy in the summer.”
+The day before the Luau
+“	“Have you thought about what you're going to put in the luau soup? I have no idea what's good... you're the chef!”
+Summer 27
+“	“Aw... summer's almost gone. My muscles are starting to deflate...”
+Fall
+“	“Well, summer's over... but I'm going to stay positive. The warmer seasons will always return.”
+“	“I feel weak... I need some protein.”
+“	“I hope my grandparents are doing okay. Grandpa's too cheap to turn on the furnace until the last minute.”
+The day before the Stardew Valley Fair
+“	“Tomorrow's the fair, are we going to go? I don't care one way or another.”
+During the Stardew Valley Fair
+“	“I'm just catching up with some old friends... you go on and have a good time.”
+Winter
+“	“Make sure you stay warm this winter. I worry about your delicate skin.”
+“	“I hope my grandparents are doing okay. They used to rely on my help quite a bit. You know, with lifting heavy objects or whatever.”
+The day before the Festival of Ice
+“	“Are you going to enter the fishing contest tomorrow? I think you can win it!”
+During the Festival of Ice
+“	“I'll be rooting for you in the fishing competition.”
+During the Feast of the Winter Star
+“	“What am I thankful for? I'll show you when we get back home...”
+28th of Winter
+“	“It's been a great year, <spouse name>. I'm looking forward to next year! Now, come closer.”
+Special Summit Cutscene Dialogue
+“	“I've finally discovered who I want to be... and I feel certain about the future. I don't think I would've gotten here without you, [Player].”
+After Divorce
+“	“I thought we had something special... I guess I was wrong,”
+Questions
+Wednesday
+
+Male players:
+"I'd ask you to throw the ball around, but you don't really seem like the sports type."
+
+Female players:
+“If you weren’t a girl I’d ask you to play catch.”
+
+I'm fine just watching you from a distance. (No effect on friendship.)
+Alex responds: "Yeah, some people just aren't made for sports."
+
+I want to play catch with you! (+15 friendship.)
+Alex responds: "Really? I guess I underestimated you. My arm's a little sore, but maybe next time."
+
+(angry) What's that supposed to mean? (No effect on friendship.)
+Alex responds: "Uh...Nevermind."
+
+
+Summer, Wednesday
+
+Male players:
+"Hey farm guy, I've got a question for you. Do you think I'll ever turn pro?"
+
+Female players:
+"Hey farm girl, I've got a question for you. Do you think I'll ever turn pro?"
+
+You're destined to be a sports legend (+30 friendship.)
+Alex responds: "Hey, Now that's what I'm talking about!"
+
+Maybe if you practice a lot (No effect on friendship.)
+Alex responds: "Yeah, well I'm so good I'm not going to have to practice all that much."
+
+No, you'll most likely fail and become a salesman (-30 friendship.)
+Alex responds: "That's insane. You're just jealous that I'm talented and popular and you're not. Get away from me."
+
+
+Fall, Wednesday
+
+"Do you think ladies like my haircut? / What do you think about my haircut?"
+
+It looks very fashionable. (+30 friendship.)
+Alex responds: "Yeah, I know. That's why I have it like this."
+
+It looks like some kind of fungal growth. (-30 friendship.)
+Alex responds: "Yeah, right. You're just jealous that I look so good."
