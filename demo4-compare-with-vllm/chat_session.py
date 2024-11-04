@@ -56,7 +56,7 @@ class ChatSession:
         chat_completion = self.client.chat.completions.create(
             messages=self.messages,
             model=self.model,
-            temperature=0.5,
+            temperature=0,
             stream=True,
             stop = "\n",
         )

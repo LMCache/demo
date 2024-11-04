@@ -1,7 +1,5 @@
 chunk_size: 256
-local_device: "cpu"
-remote_url: "lm://lmcache_server:65432"
-remote_serde: "cachegen"
+local_device: "file:///mnt/data"
 
 # Whether retrieve() is pipelined or not
 pipelined_backend: False
