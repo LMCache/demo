@@ -17,6 +17,26 @@ PORT_MAPPING = {
     }
 
 @st.cache_resource
+def preheat():
+    global PORT_MAPPING 
+    preheat_context = "This is dummy text. " * 500
+    for key in PORT_MAPPING.keys():
+        port = PORT_MAPPING[key]
+        session = chat_session.ChatSession(port)
+        session.set_context([preheat_context])
+        stream = session.chat("Please just say 'hello': ")
+        for s in stream:
+            print(s, end = "", flush = True)
+        print("")
+        session.set_context([preheat_context])
+        stream = session.chat("Please just say 'hey': ")
+        for s in stream:
+            print(s, end = "", flush = True)
+        print("")
+
+preheat() 
+
+@st.cache_resource
 def get_tokenizer():
     global MODEL_NAME
     tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
@@ -31,6 +51,8 @@ def read_context() -> str:
     return context
 
 context = read_context()
+
+preheat()
 
 container = st.container(border=True)
 
