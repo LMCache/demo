@@ -28,7 +28,7 @@ Run the following bash scripts:
 git clone https://github.com/LMCache/demo.git
 cd demo/demo4-compare-with-vllm
 echo "HF_TOKEN=<your HF token>" >> .env
-docker compose up
+sudo docker compose up
 ```
 Please replace `<your HF token>` with your huggingface token in the bash script above.
 
