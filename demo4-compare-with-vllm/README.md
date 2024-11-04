@@ -29,7 +29,7 @@ Run the following bash scripts:
 git clone https://github.com/LMCache/demo.git
 cd demo/demo4-compare-with-vllm
 echo "HF_TOKEN=<your HF token>" >> .env
-sudo docker compose up &
+sudo docker compose up -d
 timeout 300 bash -c '
     until curl -X POST localhost:8000/v1/completions > /dev/null 2>&1; do
       echo "waiting for server to start..."
