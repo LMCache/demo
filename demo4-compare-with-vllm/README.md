@@ -15,6 +15,7 @@ Note that though this demo focuses on single-node case, it can be generalized to
 - `docker compose` installed on the machine
 - sudo access to run `docker compose up`
 - A huggingface token with access to `mistralai/Mistral-7B-Instruct-v0.2`. 
+- Python >3.10, with pip installed.
 
 
 #### Customizing this demo
@@ -28,10 +29,20 @@ Run the following bash scripts:
 git clone https://github.com/LMCache/demo.git
 cd demo/demo4-compare-with-vllm
 echo "HF_TOKEN=<your HF token>" >> .env
-sudo docker compose up
+sudo docker compose up &
+timeout 300 bash -c '
+    until curl -X POST localhost:8000/v1/completions > /dev/null 2>&1; do
+      echo "waiting for server to start..."
+      sleep 1
+    done' # wait for the docker compose to be ready for receiving requests
+streamlit run frontend.py
 ```
 Please replace `<your HF token>` with your huggingface token in the bash script above.
 
 
 ## Expected results
 
+
+## Clean up
+
+Use `Ctrl+C` to terminate the frontend, and then run `sudo docker compose down` to shut down the service.
