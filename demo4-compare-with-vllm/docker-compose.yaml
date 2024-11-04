@@ -1,12 +1,10 @@
 version: '3.8'
 services:
   lmcache_0:
-    image: lmcache/lmcache_vllm:lmcache-0.1.3
+    image: lmcache/lmcache_vllm:lmcache-0.1.3.post1
     command: "${MODEL} --gpu-memory-utilization 0.6 --port 8000"
     ports:
       - "8000:8000"
-    depends_on:
-      - lmcache_server
     environment:
       HF_TOKEN: ${HF_TOKEN}
       LMCACHE_CONFIG_FILE: /etc/lmcache-config.yaml
@@ -25,12 +23,10 @@ services:
     ipc: host
 
   lmcache_1:
-    image: lmcache/lmcache_vllm:lmcache-0.1.3
+    image: lmcache/lmcache_vllm:lmcache-0.1.3.post1
     command: "${MODEL} --gpu-memory-utilization 0.6 --port 8001"
     ports:
       - "8001:8001"
-    depends_on:
-      - lmcache_server
     environment:
       HF_TOKEN: ${HF_TOKEN}
       LMCACHE_CONFIG_FILE: /etc/lmcache-config.yaml

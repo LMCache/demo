@@ -1,5 +1,5 @@
 chunk_size: 256
-local_device: "file:///mnt/data"
+local_device: "file:///mnt/data/"
 
 # Whether retrieve() is pipelined or not
 pipelined_backend: False

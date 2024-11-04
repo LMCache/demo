@@ -10,10 +10,10 @@ from transformers import AutoTokenizer
 # Change the following variables as needed
 MODEL_NAME = "lmsys/longchat-7b-16k"
 PORT_MAPPING = {
-        "LMCache-0": 8000,
-        "LMCache-1": 8001,
-        "vLLM-0": 8002,
-        "vLLM-1": 8003,
+        "vLLM w/ LMCache: A": 8000,
+        "vLLM w/ LMCache: B": 8001,
+        "Original vLLM: A": 8002,
+        "Original vLLM: B": 8003,
     }
 
 @st.cache_resource
