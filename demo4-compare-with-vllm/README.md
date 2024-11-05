@@ -27,12 +27,12 @@ git clone https://github.com/LMCache/demo.git
 cd demo/demo4-compare-with-vllm
 echo "HF_TOKEN=<your HF token>" >> .env
 sudo docker compose up --build -d
-timeout 300 bash -c ` until curl -X POST \
-    localhost:8000/v1/completions > /dev/null 2>&1; \
-    do \
-    echo "waiting for server to start..." \
-    sleep 1 \
-    done` # wait for the docker compose to be ready for receiving requests
+timeout 300 bash -c 'until curl -X POST 
+    localhost:8000/v1/completions > /dev/null 2>&1; 
+    do 
+    echo "waiting for server to start..." 
+    sleep 1 
+    done' # wait for the docker compose to be ready for receiving requests
 ```
 
 Please replace <your HF token> with your huggingface token in the bash script above.
@@ -40,47 +40,54 @@ Please replace <your HF token> with your huggingface token in the bash script ab
 
 ## Send your requests to different serving engines
 
+The command above will start 3 different serving engines, each having a web frontend that you can interact with.
+- vLLM w/ LMCache (A) --- web frontend runs at `http://<Your server IP>:8501`
+- vLLM w/ LMCache (B) --- web frontend runs at `http://<Your server IP>:8503`
+- Original vLLM w/ LMCache (B) --- web frontend runs at `http://<Your server IP>:8502`
+
 This demo will `preheat` the inference engine by sending them some dummy requests. After `preheat` finishes, you will see the following UI:
 
-![image](imgs/architecture.png)
+<img width="852" alt="image" src="https://github.com/user-attachments/assets/380c401b-8f10-4fab-bd17-dd67b1fbca29">
 
-- You can select different serving engines in the orange area
-  - Original vLLM: (A)
-  - Original vLLM: (B)
-  - vLLM w/ LMCache (A)
-  - vLLM w/ LMCache (B)
+- The orange area shows which serving engine are you using now.
 - You can ask the LLM questions in the green area.
 - The right-hand side (blue area) shows the “context” of the query sent to the LLM.
 
 You can try sending different requests to different serving engines.
 
+
 ## Steps to follow:
 
+### Send the first request to vLLM w/ LMCache (A)
 
-### Using only vLLM can be slow
+1. Open `http://<Your server's IP>:8501` (corresponds to the serving engine `vLLM w/ LMCache (A)`)
+2. Type query: “What’s FFMPEG (answer in 10 words)”
+   
+You should be able to see the following results with a response delay of around 6 seconds.
 
-1. Choose Original vLLM: (A) and type query: “What’s FFMPEG (answer in 10 words)”
-2. Choose Original vLLM: (B) and type query: “New question: just give me a ffmpeg command line example without any explanation”
-  
-You should be able to see the following results, where the request to Original vLLM: (A) and to Original vLLM: (B) have the same response delay.
+<img width="333" alt="image" src="https://github.com/user-attachments/assets/e8b388ce-a9d1-44f6-9de2-6a344a52ccfa">
 
-![image](imgs/result_1.png)
+### What if the original vLLM gets a new request with the **same** context
 
-### vLLM + LMCache speeds up inference by KV cache sharing
+1. Open `http://<Your server's IP>:8502` (corresponds to the serving engine `original vLLM`)
+2. Type query: Summarize FFMPEG's main feature in 10 words
+   
+You should be able to see the following results with a response delay still of around 6 seconds.
 
+<img width="333" alt="image" src="https://github.com/user-attachments/assets/aff3860f-379f-4130-9df6-7b475e55b90f">
 
-1. Choose vLLM w/ LMCache: (A) and type query: “What’s FFMPEG (answer in 10 words)”
-2. Choose vLLM w/ LMCache: (B) and type query: “New question: just give me a ffmpeg command line example without any explanation”
+### What if the vLLM w/ LMCache (B) gets a new request with the **same** context
 
-You should be able to see the following results, where vLLM + LMCache accelerates the inference on vLLM w/ LMCache: (B) by 6-17$\times$, depending on the storage device.
+1. Open `http://<Your server's IP>:8503` (corresponds to the serving engine `vLLM w/ LMCache (B)`)
+2. Type query: Summarize FFMPEG's main feature in 10 words
+    - You should be able to see the following results with a response delay still of less than 1 second, which is 6x faster than the original vLLM.
+3. Type another query: just give me a ffmpeg command line example without any explanation
+    - You should be able to see the following results with a response delay still of around 0.35 seconds, which is 15x faster than the original vLLM.
 
-![image](imgs/result_2.png)
+<img width="759" alt="image" src="https://github.com/user-attachments/assets/adc508c5-3487-422b-86bf-5e564356ea7a">
 
 ## Clean up
 Use Ctrl+C to terminate the frontend, and then run sudo docker compose down to shut down the service.
 
 ## Customise the configuration
 Note that this demo runs the model mistralai/Mistral-7B-Instruct-v0.2 and stores KV cache under directory /tmp. You can customize these two entires by editing the file .env under demo4-compare-with-vllm.
-
-## Known issues
-Currently, LMCache may impact the decoding speed of the vLLM when storing the KV cache to the disk. This is a known issue, and can be solved by better async implementation soon.
