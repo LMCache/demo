@@ -66,9 +66,13 @@ Try sending different requests to different serving engines.
 
 ## Expected results
 
+### The first query
+
 When the first request is sent to the `original vLLM (A)` or `vLLM w/ LMCache (A)`, both engines will have a similar response delay.
 
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/800efc1a-2ab2-47ab-9873-5ba3f56289cc">
+
+### Querying different engines with the same context 
 
 However, when the request with the same context is sent to the `vLLM w/ LMCache (B)`, the engine can load the KV cache shared from `vLLM w/ LMCache (A)`, and thus have a much better response delay.
 
