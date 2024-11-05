@@ -3,7 +3,7 @@
 
 ## Introduction
 
-**After this quick 3-minute example, you will know how to install LMCache and demonstrate that it speeds up the inference by 6-17X.**
+**After this quick 3-minute example, you will know how to install LMCache and demonstrate that it speeds up the inference by 6X.**
 
 ![image](imgs/contrast.png)
 
