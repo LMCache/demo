@@ -90,7 +90,7 @@ For the demo, let's issue the same query as follows to both engines, and see whi
 Type in the query to both Standard vLLM Engine ``(on the left)`` and LMCache + vLLM Engine (new) ``(on the right)``
 and see the speedup for yourself!
 
-<img width="333" alt="image" src="https://github.com/user-attachments/assets/e8b388ce-a9d1-44f6-9de2-6a344a52ccfa">
+<img style="display: block; margin: auto;" width="333" alt="image" src="imgs/demo_4.png">
 
 You will see that the LMCache + vLLM Engine (New) is almost **6X faster** than the Standard vLLM Engine.
 
