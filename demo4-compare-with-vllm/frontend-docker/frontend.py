@@ -9,37 +9,40 @@ from transformers import AutoTokenizer
 
 # Change the following variables as needed
 MODEL_NAME = "lmsys/longchat-7b-16k"
-PORT_MAPPING = {
-        "vLLM w/ LMCache: A": 8000,
-        "vLLM w/ LMCache: B": 8001,
-        "Original vLLM: A": 8002,
-        "Original vLLM: B": 8003,
-    }
+
+if len(sys.argv) != 5:
+    print(f"Usage: streamlit run {sys.argv[0]} <vLLM IP> <vLLM port> <engine name> <1 or 0>")
+    exit(-1)
+
+
+IP = sys.argv[1]
+PORT = int(sys.argv[2])
+ENGINE_NAME = sys.argv[3]
+
 
 @st.cache_resource
 def preheat():
-    global PORT_MAPPING 
-    preheat_context = "This is dummy text. " * 500
-    for key in PORT_MAPPING.keys():
-        port = PORT_MAPPING[key]
-        session = chat_session.ChatSession(port)
-        session.set_context([preheat_context])
-        stream = session.chat("Please just say 'hello': ")
-        for s in stream:
-            print(s, end = "", flush = True)
-        print("")
-        session.set_context([preheat_context])
-        stream = session.chat("Please just say 'hey': ")
-        for s in stream:
-            print(s, end = "", flush = True)
-        print("")
+    global IP, PORT
+    preheat_context = "This is dummy text. " * 750
+    session = chat_session.ChatSession(IP, PORT)
+    stream = session.chat("Please just say 'hello': ")
+    for s in stream:
+        print(s, end = "", flush = True)
+    print("")
+    session.set_context([preheat_context])
+    stream = session.chat("Please just say 'hey': ")
+    for s in stream:
+        print(s, end = "", flush = True)
+    print("")
 
-preheat() 
+
+if int(sys.argv[4]) > 0:
+    preheat() 
 
 @st.cache_resource
 def get_tokenizer():
     global MODEL_NAME
-    tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
+    tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, use_fast=False)
     return tokenizer
 
 tokenizer = get_tokenizer()
@@ -52,19 +55,14 @@ def read_context() -> str:
 
 context = read_context()
 
-preheat()
-
 container = st.container(border=True)
 
 with st.sidebar:
-    option = st.selectbox(
-        "Select the serving engine",
-        list(PORT_MAPPING.keys()),
-    )
+    port = PORT
 
-    port = PORT_MAPPING[option]
+    st.header(f"Current engine: _'{ENGINE_NAME}'_")
 
-    session = chat_session.ChatSession(port)
+    session = chat_session.ChatSession(IP, port)
 
     system_prompt = st.text_area(
             "System prompt:",
@@ -77,7 +75,7 @@ with st.sidebar:
     container.header(f"The context given to LLM: ({len(num_tokens)} tokens)", divider = "grey")
     container.text(session.get_context())
 
-    messages = st.container(height=400)
+    messages = st.container(height=300)
     if prompt := st.chat_input("Type the question here"):
         messages.chat_message("user").write(prompt)
         messages.chat_message("assistant").write_stream(session.chat(prompt))

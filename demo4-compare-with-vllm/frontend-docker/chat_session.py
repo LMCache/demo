@@ -7,9 +7,9 @@ import time
 
 
 class ChatSession:
-    def __init__(self, port, context_separator = "###"):
+    def __init__(self, ip, port, context_separator = "###"):
         openai_api_key = "EMPTY"
-        openai_api_base = f"http://localhost:{port}/v1"
+        openai_api_base = f"http://{ip}:{port}/v1"
 
         self.client = client = OpenAI(
             # defaults to os.environ.get("OPENAI_API_KEY")
