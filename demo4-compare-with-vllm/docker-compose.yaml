@@ -1,17 +1,14 @@
 version: '3.8'
 services:
-  lmcache_0:
-    image: lmcache/lmcache_vllm:lmcache-0.1.3.post1
-    command: "${MODEL} --gpu-memory-utilization 0.6 --port 8000"
+  vllm_0:
+    image: vllm/vllm-openai:v0.6.2
+    command: "--model ${MODEL} --gpu-memory-utilization 0.6 --port 8000"
     ports:
       - "8000:8000"
     environment:
       HF_TOKEN: ${HF_TOKEN}
-      LMCACHE_CONFIG_FILE: /etc/lmcache-config.yaml
     volumes:
-      - ${KV_STORE_DIR}:/mnt/data
       - ${LOCAL_HF_HOME}:/root/.cache/huggingface
-      - ./lmcache-config.yaml:/etc/lmcache-config.yaml
     runtime: nvidia
     deploy:
       resources:
@@ -22,8 +19,7 @@ services:
               device_ids: ['0']
     ipc: host
 
-
-  vllm_0:
+  vllm_1:
     image: vllm/vllm-openai:v0.6.2
     command: "--model ${MODEL} --gpu-memory-utilization 0.6 --port 8001"
     ports:
@@ -42,7 +38,7 @@ services:
               device_ids: ['1']
     ipc: host
 
-  lmcache_1:
+  lmcache_0:
     image: lmcache/lmcache_vllm:lmcache-0.1.3.post1
     command: "${MODEL} --gpu-memory-utilization 0.6 --port 8002"
     ports:
@@ -64,21 +60,51 @@ services:
               device_ids: ['2']
     ipc: host
 
-  frontend_lmcache_a:
-    build: ./frontend-docker
-    ports:
-      - "8501:8501"
-    command: ["lmcache_0", "8000", "vLLM w/ LMCache (A)", "1"]
 
-  frontend_vllm:
-    build: ./frontend-docker
-    ports:
-      - "8502:8501"
-    command: ["vllm_0", "8001", "Original vLLM", "0"]
 
-  frontend_lmcache_b:
-    build: ./frontend-docker
+  lmcache_1:
+    image: lmcache/lmcache_vllm:lmcache-0.1.3.post1
+    command: "${MODEL} --gpu-memory-utilization 0.6 --port 8003"
     ports:
-      - "8503:8501"
-    command: ["lmcache_1", "8002", "vLLM w/ LMCache (B)", "1"]
+      - "8003:8003"
+    environment:
+      HF_TOKEN: ${HF_TOKEN}
+      LMCACHE_CONFIG_FILE: /etc/lmcache-config.yaml
+    volumes:
+      - ${KV_STORE_DIR}:/mnt/data
+      - ${LOCAL_HF_HOME}:/root/.cache/huggingface
+      - ./lmcache-config.yaml:/etc/lmcache-config.yaml
+    runtime: nvidia
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              capabilities: [gpu]
+              device_ids: ['3']
+    ipc: host
+
+# frontend_vllm_a:
+#   build: ./frontend-docker
+#   ports:
+#     - "8502:8501"
+#   command: ["vllm_0", "8000", "Original vLLM (A)", "0"]
+
+# frontend_vllm_b:
+#   build: ./frontend-docker
+#   ports:
+#     - "8502:8501"
+#   command: ["vllm_1", "8001", "Original vLLM (B)", "0"]
+
+# frontend_lmcache_a:
+#   build: ./frontend-docker
+#   ports:
+#     - "8501:8501"
+#   command: ["lmcache_0", "8002", "vLLM w/ LMCache (A)", "1"]
+
+# frontend_lmcache_b:
+#   build: ./frontend-docker
+#   ports:
+#     - "8503:8501"
+#   command: ["lmcache_1", "8003", "vLLM w/ LMCache (B)", "1"]
 

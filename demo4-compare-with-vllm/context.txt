@@ -1,13 +1,4 @@
-FFMPEG(1)						FFMPEG(1)
-
-NAME
-       ffmpeg - ffmpeg video converter
-
-SYNOPSIS
-       ffmpeg [global_options] {[input_file_options] -i input_url} ... 
-       {[output_file_options] output_url} ...
-
-DESCRIPTION
+FFMPEG Documentation
        ffmpeg is a very fast video and audio converter that can also 
        grab from a live audio/video source. It can also convert between 
        arbitrary sample rates and resize video on the fly with a high 
