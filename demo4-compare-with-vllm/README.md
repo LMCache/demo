@@ -16,7 +16,7 @@ Note that though this demo focuses on single-machine case, it can be generalized
 
 - 4 Nvidia A6000 or A40 GPU on the same machine
 - Local SSD disk with peak IO bandwidth > 3GB/s (typical speed for SATA3 SSDs)
-- `docker compose <https://docs.docker.com/compose/install/>`_ installed on the machine
+- [docker compose](https://docs.docker.com/compose/install/) installed on the machine
 - sudo access to run ``docker compose up``
 - A huggingface token with access to ``lmsys/longchat-7b-16k``. 
 - A local Python environment which can run ``pip install``.
