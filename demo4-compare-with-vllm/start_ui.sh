@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-timeout 300 bash -c 'until curl -X POST localhost:8000/v1/completions > /dev/null 2>&1;
+timeout 300 bash -c 'until curl -X POST localhost:8002/v1/completions > /dev/null 2>&1;
     do
     echo "waiting for server to start..."
     sleep 1
