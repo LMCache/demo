@@ -1,0 +1,159 @@
+ parsing the environment variable are not fatal, and will not appear in the report.
+
+       -hide_banner
+	   Suppress printing banner.
+
+	   All FFmpeg tools will normally show a copyright notice, build options and library versions.
+	   This option can be used to suppress printing this information.
+
+       -cpuflags flags (global)
+	   Allows setting and clearing cpu flags. This option is intended for testing. Do not use it
+	   unless you know what you're doing.
+
+		   ffmpeg -cpuflags -sse+mmx ...
+		   ffmpeg -cpuflags mmx ...
+		   ffmpeg -cpuflags 0 ...
+
+	   Possible flags for this option are:
+
+	   x86
+	       mmx
+	       mmxext
+	       sse
+	       sse2
+	       sse2slow
+	       sse3
+	       sse3slow
+	       ssse3
+	       atom
+	       sse4.1
+	       sse4.2
+	       avx
+	       avx2
+	       xop
+	       fma3
+	       fma4
+	       3dnow
+	       3dnowext
+	       bmi1
+	       bmi2
+	       cmov
+	   ARM
+	       armv5te
+	       armv6
+	       armv6t2
+	       vfp
+	       vfpv3
+	       neon
+	       setend
+	   AArch64
+	       armv8
+	       vfp
+	       neon
+	   PowerPC
+	       altivec
+	   Specific Processors
+	       pentium2
+	       pentium3
+	       pentium4
+	       k6
+	       k62
+	       athlon
+	       athlonxp
+	       k8
+
+   AVOptions
+       These options are provided directly by the libavformat, libavdevice and libavcodec libraries. To
+       see the list of available AVOptions, use the -help option. They are separated into two categories:
+
+       generic
+	   These options can be set for any container, codec or device. Generic options are listed under
+	   AVFormatContext options for containers/devices and under AVCodecContext options for codecs.
+
+       private
+	   These options are specific to the given container, device or codec. Private options are listed
+	   under their corresponding containers/devices/codecs.
+
+       For example to write an ID3v2.3 header instead of a default ID3v2.4 to an MP3 file, use the
+       id3v2_version private option of the MP3 muxer:
+
+	       ffmpeg -i input.flac -id3v2_version 3 out.mp3
+
+       All codec AVOptions are per-stream, and thus a stream specifier should be attached to them:
+
+	       ffmpeg -i multichannel.mxf -map 0:v:0 -map 0:a:0 -map 0:a:0 -c:a:0 ac3 -b:a:0 640k -ac:a:1 2 -c:a:1 aac -b:2 128k out.mp4
+
+       In the above example, a multichannel audio stream is mapped twice for output.  The first instance
+       is encoded with codec ac3 and bitrate 640k.  The second instance is downmixed to 2 channels and
+       encoded with codec aac. A bitrate of 128k is specified for it using absolute index of the output
+       stream.
+
+       Note: the -nooption syntax cannot be used for boolean AVOptions, use -option 0/-option 1.
+
+       Note: the old undocumented way of specifying per-stream AVOptions by prepending v/a/s to the
+       options name is now obsolete and will be removed soon.
+
+   Main options
+       -f fmt (input/output)
+	   Force input or output file format. The format is normally auto detected for input files and
+	   guessed from the file extension for output files, so this option is not needed in most cases.
+
+       -i url (input)
+	   input file url
+
+       -y (global)
+	   Overwrite output files without asking.
+
+       -n (global)
+	   Do not overwrite output files, and exit immediately if a specified output file already exists.
+
+       -stream_loop number (input)
+	   Set number of times input stream shall be looped. Loop 0 means no loop, loop -1 means infinite
+	   loop.
+
+       -c[:stream_specifier] codec (input/output,per-stream)
+       -codec[:stream_specifier] codec (input/output,per-stream)
+	   Select an encoder (when used before an output file) or a decoder (when used before an input
+	   file) for one or more streams. codec is the name of a decoder/encoder or a special value
+	   "copy" (output only) to indicate that the stream is not to be re-encoded.
+
+	   For example
+
+		   ffmpeg -i INPUT -map 0 -c:v libx264 -c:a copy OUTPUT
+
+	   encodes all video streams with libx264 and copies all audio streams.
+
+	   For each stream, the last matching "c" option is applied, so
+
+		   ffmpeg -i INPUT -map 0 -c copy -c:v:1 libx264 -c:a:137 libvorbis OUTPUT
+
+	   will copy all the streams except the second video, which will be encoded with libx264, and the
+	   138th audio, which will be encoded with libvorbis.
+
+       -t duration (input/output)
+	   When used as an input option (before "-i"), limit the duration of data read from the input
+	   file.
+
+	   When used as an output option (before an output url), stop writing the output after its
+	   duration reaches duration.
+
+	   duration must be a time duration specification, see the Time duration section in the
+	   ffmpeg-utils(1) manual.
+
+	   -to and -t are mutually exclusive and -t has priority.
+
+       -to position (input/output)
+	   Stop writing the output or reading the input at position.  position must be a time duration
+	   specification, see the Time duration section in the ffmpeg-utils(1) manual.
+
+	   -to and -t are mutually exclusive and -t has priority.
+
+       -fs limit_size (output)
+	   Set the file size limit, expressed in bytes. No further chunk of bytes is written after the
+	   limit is exceeded. The size of the output file is slightly more than the requested file size.
+
+       -ss position (input/output)
+	   When used as an input option (before "-i"), seeks in this input file to position. Note that in
+	   most formats it is not possible to seek exactly, so ffmpeg will seek to the closest seek point
+	   before position.  When transcoding and -accurate_seek is enabled (the default), this extra
+	   segment between the seek point and

@@ -1,0 +1,130 @@
+ case, for example, when the graph has more than one input
+       and/or output, or when output stream type is different from input. They can be represented with
+       the following diagram:
+
+		_________
+	       |	 |
+	       | input 0 |\		       __________
+	       |_________| \		      | 	 |
+			    \	_________    /| output 0 |
+			     \ |	 |  / |__________|
+		_________     \| complex | /
+	       |	 |     |	 |/
+	       | input 1 |---->| filter  |\
+	       |_________|     |	 | \   __________
+			      /| graph	 |  \ | 	 |
+			     / |	 |   \| output 1 |
+		_________   /  |_________|    |__________|
+	       |	 | /
+	       | input 2 |/
+	       |_________|
+
+       Complex filtergraphs are configured with the -filter_complex option.  Note that this option is
+       global, since a complex filtergraph, by its nature, cannot be unambiguously associated with a
+       single stream or file.
+
+       The -lavfi option is equivalent to -filter_complex.
+
+       A trivial example of a complex filtergraph is the "overlay" filter, which has two video inputs and
+       one video output, containing one video overlaid on top of the other. Its audio counterpart is the
+       "amix" filter.
+
+   Stream copy
+       Stream copy is a mode selected by supplying the "copy" parameter to the -codec option. It makes
+       ffmpeg omit the decoding and encoding step for the specified stream, so it does only demuxing and
+       muxing. It is useful for changing the container format or modifying container-level metadata. The
+       diagram above will, in this case, simplify to this:
+
+		_______ 	     ______________	       ________
+	       |       |	    |		   |	      |        |
+	       | input |  demuxer   | encoded data |  muxer   | output |
+	       | file  | ---------> | packets	   | -------> | file   |
+	       |_______|	    |______________|	      |________|
+
+       Since there is no decoding or encoding, it is very fast and there is no quality loss. However, it
+       might not work in some cases because of many factors. Applying filters is obviously also
+       impossible, since filters work on uncompressed data.
+
+STREAM SELECTION
+       ffmpeg provides the "-map" option for manual control of stream selection in each output file.
+       Users can skip "-map" and let ffmpeg perform automatic stream selection as described below. The
+       "-vn / -an / -sn / -dn" options can be used to skip inclusion of video, audio, subtitle and data
+       streams respectively, whether manually mapped or automatically selected, except for those streams
+       which are outputs of complex filtergraphs.
+
+   Description
+       The sub-sections that follow describe the various rules that are involved in stream selection.
+       The examples that follow next show how these rules are applied in practice.
+
+       While every effort is made to accurately reflect the behavior of the program, FFmpeg is under
+       continuous development and the code may have changed since the time of this writing.
+
+       Automatic stream selection
+
+       In the absence of any map options for a particular output file, ffmpeg inspects the output format
+       to check which type of streams can be included in it, viz. video, audio and/or subtitles. For each
+       acceptable stream type, ffmpeg will pick one stream, when available, from among all the inputs.
+
+       It will select that stream based upon the following criteria:
+
+       •   for video, it is the stream with the highest resolution,
+
+       •   for audio, it is the stream with the most channels,
+
+       •   for subtitles, it is the first subtitle stream found but there's a caveat.  The output
+	   format's default subtitle encoder can be either text-based or image-based, and only a subtitle
+	   stream of the same type will be chosen.
+
+       In the case where several streams of the same type rate equally, the stream with the lowest index
+       is chosen.
+
+       Data or attachment streams are not automatically selected and can only be included using "-map".
+
+       Manual stream selection
+
+       When "-map" is used, only user-mapped streams are included in that output file, with one possible
+       exception for filtergraph outputs described below.
+
+       Complex filtergraphs
+
+       If there are any complex filtergraph output streams with unlabeled pads, they will be added to the
+       first output file. This will lead to a fatal error if the stream type is not supported by the
+       output format. In the absence of the map option, the inclusion of these streams leads to the
+       automatic stream selection of their types being skipped. If map options are present, these
+       filtergraph streams are included in addition to the mapped streams.
+
+       Complex filtergraph output streams with labeled pads must be mapped once and exactly once.
+
+       Stream handling
+
+       Stream handling is independent of stream selection, with an exception for subtitles described
+       below. Stream handling is set via the "-codec" option addressed to streams within a specific
+       output file. In particular, codec options are applied by ffmpeg after the stream selection process
+       and thus do not influence the latter. If no "-codec" option is specified for a stream type, ffmpeg
+       will select the default encoder registered by the output file muxer.
+
+       An exception exists for subtitles. If a subtitle encoder is specified for an output file, the
+       first subtitle stream found of any type, text or image, will be included. ffmpeg does not validate
+       if the specified encoder can convert the selected stream or if the converted stream is acceptable
+       within the output format. This applies generally as well: when the user sets an encoder manually,
+       the stream selection process cannot check if the encoded stream can be muxed into the output file.
+       If it cannot, ffmpeg will abort and all output files will fail to be processed.
+
+   Examples
+       The following examples illustrate the behavior, quirks and limitations of ffmpeg's stream
+       selection methods.
+
+       They assume the following three input files.
+
+	       input file 'A.avi'
+		     stream 0: video 640x360
+		     stream 1: audio 2 channels
+
+	       input file 'B.mp4'
+		     stream 0: video 1920x1080
+		     stream 1: audio 2 channels
+		     stream 2: subtitles (text)
+		     stream 3: audio 5.1 channels
+		     stream 4: subtitles (text)
+
+	

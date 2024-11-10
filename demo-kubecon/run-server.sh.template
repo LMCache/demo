@@ -1,0 +1,46 @@
+#!/bin/bash
+
+### CHANGE THE FOLLOWING VARIABLES
+MODEL=mistralai/Mistral-7B-Instruct-v0.2    # LLM model name
+LOCAL_HF_HOME=                              # the HF_HOME on local machine. vLLM will try finding/dowloading the models here
+HF_TOKEN=                                   # (optional) the huggingface token to access some special models
+PORT=8000                                   # Port for the server
+PORT2=8001
+
+sudo docker pull apostacyh/vllm:lmcache-blend
+
+# Preprocess the text chunks 
+set -e
+sudo docker run --runtime nvidia --gpus '"device=0"' \
+    -v ${LOCAL_HF_HOME}:/root/.cache/huggingface \
+    -v `pwd`/data:/input \
+    -v `pwd`/data:/data \
+    --env "HF_TOKEN=${HF_TOKEN}" \
+    --ipc=host \
+    --network=host \
+    --entrypoint python3 \
+    apostacyh/vllm:lmcache-blend \
+    /lmcache/demo/precompute.py \
+    --model ${MODEL} --lmcache-config-file /lmcache/demo/example.yaml --data-path /input \
+
+# Start vLLM with LMCache
+sudo docker run --name lmcache-vllm1 --runtime nvidia --gpus '"device=0"' \
+    -v ${LOCAL_HF_HOME}:/root/.cache/huggingface \
+    -v `pwd`/data:/input \
+    -v `pwd`/data:/data \
+    --ipc=host \
+    --network=host \
+    -d apostacyh/vllm:lmcache-blend \
+    --model ${MODEL} --gpu-memory-utilization 0.6 --port ${PORT} \
+    --lmcache-config-file /lmcache/demo/example.yaml
+
+# Start vLLM without LMCache
+sudo docker run --name lmcache-vllm2 --runtime nvidia --gpus '"device=1"' \
+    -v ${LOCAL_HF_HOME}:/root/.cache/huggingface \
+    -v `pwd`/data:/input \
+    -v `pwd`/data:/data \
+    --ipc=host \
+    --network=host \
+    -d apostacyh/vllm:lmcache-blend \
+    --model ${MODEL} --gpu-memory-utilization 0.6 --port ${PORT2} 
+
