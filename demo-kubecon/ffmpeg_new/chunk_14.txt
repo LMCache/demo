@@ -1,0 +1,178 @@
+ers,
+	       decoders, demuxers, muxers, filters, etc.
+
+	   decoder=decoder_name
+	       Print detailed information about the decoder named decoder_name. Use the -decoders option
+	       to get a list of all decoders.
+
+	   encoder=encoder_name
+	       Print detailed information about the encoder named encoder_name. Use the -encoders option
+	       to get a list of all encoders.
+
+	   demuxer=demuxer_name
+	       Print detailed information about the demuxer named demuxer_name. Use the -formats option
+	       to get a list of all demuxers and muxers.
+
+	   muxer=muxer_name
+	       Print detailed information about the muxer named muxer_name. Use the -formats option to
+	       get a list of all muxers and demuxers.
+
+	   filter=filter_name
+	       Print detailed information about the filter name filter_name. Use the -filters option to
+	       get a list of all filters.
+
+	   bsf=bitstream_filter_name
+	       Print detailed information about the bitstream filter name bitstream_filter_name.  Use the
+	       -bsfs option to get a list of all bitstream filters.
+
+       -version
+	   Show version.
+
+       -formats
+	   Show available formats (including devices).
+
+       -demuxers
+	   Show available demuxers.
+
+       -muxers
+	   Show available muxers.
+
+       -devices
+	   Show available devices.
+
+       -codecs
+	   Show all codecs known to libavcodec.
+
+	   Note that the term 'codec' is used throughout this documentation as a shortcut for what is
+	   more correctly called a media bitstream format.
+
+       -decoders
+	   Show available decoders.
+
+       -encoders
+	   Show all available encoders.
+
+       -bsfs
+	   Show available bitstream filters.
+
+       -protocols
+	   Show available protocols.
+
+       -filters
+	   Show available libavfilter filters.
+
+       -pix_fmts
+	   Show available pixel formats.
+
+       -sample_fmts
+	   Show available sample formats.
+
+       -layouts
+	   Show channel names and standard channel layouts.
+
+       -colors
+	   Show recognized color names.
+
+       -sources device[,opt1=val1[,opt2=val2]...]
+	   Show autodetected sources of the input device.  Some devices may provide system-dependent
+	   source names that cannot be autodetected.  The returned list cannot be assumed to be always
+	   complete.
+
+		   ffmpeg -sources pulse,server=192.168.0.4
+
+       -sinks device[,opt1=val1[,opt2=val2]...]
+	   Show autodetected sinks of the output device.  Some devices may provide system-dependent sink
+	   names that cannot be autodetected.  The returned list cannot be assumed to be always complete.
+
+		   ffmpeg -sinks pulse,server=192.168.0.4
+
+       -loglevel [flags+]loglevel | -v [flags+]loglevel
+	   Set logging level and flags used by the library.
+
+	   The optional flags prefix can consist of the following values:
+
+	   repeat
+	       Indicates that repeated log output should not be compressed to the first line and the
+	       "Last message repeated n times" line will be omitted.
+
+	   level
+	       Indicates that log output should add a "[level]" prefix to each message line. This can be
+	       used as an alternative to log coloring, e.g. when dumping the log to file.
+
+	   Flags can also be used alone by adding a '+'/'-' prefix to set/reset a single flag without
+	   affecting other flags or changing loglevel. When setting both flags and loglevel, a '+'
+	   separator is expected between the last flags value and before loglevel.
+
+	   loglevel is a string or a number containing one of the following values:
+
+	   quiet, -8
+	       Show nothing at all; be silent.
+
+	   panic, 0
+	       Only show fatal errors which could lead the process to crash, such as an assertion
+	       failure. This is not currently used for anything.
+
+	   fatal, 8
+	       Only show fatal errors. These are errors after which the process absolutely cannot
+	       continue.
+
+	   error, 16
+	       Show all errors, including ones which can be recovered from.
+
+	   warning, 24
+	       Show all warnings and errors. Any message related to possibly incorrect or unexpected
+	       events will be shown.
+
+	   info, 32
+	       Show informative messages during processing. This is in addition to warnings and errors.
+	       This is the default value.
+
+	   verbose, 40
+	       Same as "info", except more verbose.
+
+	   debug, 48
+	       Show everything, including debugging information.
+
+	   trace, 56
+
+	   For example to enable repeated log output, add the "level" prefix, and set loglevel to
+	   "verbose":
+
+		   ffmpeg -loglevel repeat+level+verbose -i input output
+
+	   Another example that enables repeated log output without affecting current state of "level"
+	   prefix flag or loglevel:
+
+		   ffmpeg [...] -loglevel +repeat
+
+	   By default the program logs to stderr. If coloring is supported by the terminal, colors are
+	   used to mark errors and warnings. Log coloring can be disabled setting the environment
+	   variable AV_LOG_FORCE_NOCOLOR or NO_COLOR, or can be forced setting the environment variable
+	   AV_LOG_FORCE_COLOR.	The use of the environment variable NO_COLOR is deprecated and will be
+	   dropped in a future FFmpeg version.
+
+       -report
+	   Dump full command line and console output to a file named "program-YYYYMMDD-HHMMSS.log" in the
+	   current directory.  This file can be useful for bug reports.  It also implies "-loglevel
+	   debug".
+
+	   Setting the environment variable FFREPORT to any value has the same effect. If the value is a
+	   ':'-separated key=value sequence, these options will affect the report; option values must be
+	   escaped if they contain special characters or the options delimiter ':' (see the ``Quoting and
+	   escaping'' section in the ffmpeg-utils manual).
+
+	   The following options are recognized:
+
+	   file
+	       set the file name to use for the report; %p is expanded to the name of the program, %t is
+	       expanded to a timestamp, "%%" is expanded to a plain "%"
+
+	   level
+	       set the log verbosity level using a numerical value (see "-loglevel").
+
+	   For example, to output a report to a file named ffreport.log using a log level of 32 (alias
+	   for log level "info"):
+
+		   FFREPORT=file=ffreport.log:level=32 ffmpeg -i input output
+
+	   Errors in
