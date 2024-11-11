@@ -6,6 +6,13 @@ import streamlit as st
 import chat_session
 from typing import List, Dict
 from transformers import AutoTokenizer
+
+from huggingface_hub import login
+
+# Set up the Hugging Face Hub credentials
+hf_token = os.getenv("HF_TOKEN")
+if hf_token is not None:
+    login(token=hf_token)
     
 MODEL_NAME = "lmsys/longchat-7b-16k"
 PORT_LMCACHE = 8000

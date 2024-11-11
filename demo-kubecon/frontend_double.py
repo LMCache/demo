@@ -43,7 +43,7 @@ def read_chunks(file_folder) -> Dict[str, str]:
 
     return ret
 
-chunks = read_chunks("ffmpeg/")
+chunks = read_chunks("ffmpeg_new/")
 
 # Will not have a dropdown but need to show we use the same 
 # chunks in some way.
@@ -53,7 +53,7 @@ selected_chunks = st.multiselect(
     default = [],
     placeholder = "Select in the drop-down menu")
 
-f = open("ffmpeg/sys_prompt.txt", "r")
+f = open("ffmpeg_new/sys_prompt.txt", "r")
 sys_prompt = f.read()
 
 gap_width = 0.013
