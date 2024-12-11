@@ -39,7 +39,7 @@ services:
     ipc: host
 
   lmcache_0:
-    image: lmcache/lmcache_vllm:lmcache-0.1.3.post1
+    image: lmcache/lmcache_vllm:lmcache-0.1.4
     command: "${MODEL} --gpu-memory-utilization 0.6 --port 8002"
     ports:
       - "8002:8002"
@@ -63,7 +63,7 @@ services:
 
 
   lmcache_1:
-    image: lmcache/lmcache_vllm:lmcache-0.1.3.post1
+    image: lmcache/lmcache_vllm:lmcache-0.1.4
     command: "${MODEL} --gpu-memory-utilization 0.6 --port 8003"
     ports:
       - "8003:8003"
