@@ -69,7 +69,7 @@ col1, col3, col2 = st.columns([col_width, gap_width, col_width], gap="small")
 
 with col3:
     st.text("")
-    st.image("bar.png", use_column_width=True)
+    st.image("bar.png", use_container_width=True)
 
 with col1:
     port = PORT_VLLM

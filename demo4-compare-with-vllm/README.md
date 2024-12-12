@@ -28,7 +28,7 @@ Note that though this demo focuses on single-machine case, it can be generalized
 $ git clone https://github.com/LMCache/demo.git
 $ cd demo/demo4-compare-with-vllm
 $ echo "HF_TOKEN=<your HF token>" >> .env
-$ pip install streamlit openai transformers sentencepiece
+$ pip install streamlit openai transformers sentencepiece numpy==1.26.4
 $ sudo docker compose up -d
 $ bash start_ui.sh
 ```
