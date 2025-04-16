@@ -44,7 +44,7 @@ def PrepareEngines():
     consume_stream(stream1)
     consume_stream(stream2)
     stream1 = session1.chat("Please just say 'hey': ")
-    stream2 = session1.chat("Please just say 'hey': ")
+    stream2 = session2.chat("Please just say 'hey': ")
     consume_stream(stream1)
     consume_stream(stream2)
 
