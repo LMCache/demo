@@ -51,7 +51,7 @@ INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
 
 The frontend uses `openai` and `streamlit` python packages. Install them using:
 ```bash
-pip install openai streamlit
+pip install openai streamlit transformers sentencepiece
 ```
 
 Then, start the web server using:
